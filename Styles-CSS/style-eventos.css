@@ -702,41 +702,6 @@ footer {
     color: #ff0000;
 }
 
-
-/* Paginación */
-.pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-    gap: 10px;
-}
-
-.pagination button {
-    padding: 10px 15px;
-    background: rgba(0, 174, 255, 0.2);
-    color: #00aeff;
-    border: 1px solid rgba(0, 174, 255, 0.4);
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.pagination button:hover:not(:disabled) {
-    background: rgba(0, 174, 255, 0.4);
-    color: white;
-}
-
-.pagination button:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-}
-
-#pageInfo {
-    color: #ddd;
-    font-size: 1.1rem;
-}
-
 /* Modal general */
 .modal {
     display: none; /* Oculto por defecto */
