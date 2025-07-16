@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitud de Elaboración de Planillas | FiscalPro</title>
+    <link rel="stylesheet" href="Styles-CSS/stylePlanilla.css">
+    <link rel="icon" href="Imagenes/icono.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container-logo">
+            <div class="btn-menu">
+                <label for="btn-menu">☰</label>
+            </div>
+            <div class="logo">
+                <img src="Imagenes/logo-Fiscalpro.png" alt="FiscalPro">
+            </div>
+        </div>
+        <nav class="main-menu">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="Contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Menú lateral -->
+        <input type="checkbox" id="btn-menu" />
+        <div class="container-menu">
+            <div class="cont-menu">
+                <nav>
+                    <a href="administracionTributaria.html">Administración Tributaria</a>
+                    <a href="Planillas.html">Planillas y RRHH</a>
+                    <a href="reclutamiento.html">Reclutamiento</a>
+                    <a href="auditorias.html">Auditorías Financieras</a>
+                    <a href="outsourcing.html">Outsourcing Contable</a>
+                    <a href="eventos-anuncios.html">Eventos y Anuncios</a>
+                    <a href="calculadora.html">Calculadora Tributaria</a>
+                    <a href="validaciones.html">Validador de Facturas</a>
+                </nav>
+                <label for="btn-menu">✕</label>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Marquee descriptivo -->
+    <div class="marquee-container">
+        <div class="marquee-content">
+            📢 ¡Solicita ahora tu servicio de elaboración de planillas y olvídate de las complicaciones! • Garantizamos exactitud y cumplimiento normativo • Soporte especializado en planillas electrónicas • 
+        </div>
+    </div>
+    
+    <!-- Contenido principal -->
+    <div class="main-content">
+        <div class="form-header">
+            <h1>Solicitud de Elaboración de Planillas</h1>
+            <p>Complete el siguiente formulario para solicitar nuestro servicio de planillas</p>
+        </div>
+        
+        <form class="formulario" id="formularioPlanillas">
+            <div class="seccion">
+                <h3>📋 Datos de la Empresa</h3>
+                <table>
+                    <tr>
+                        <td><label for="empresa">Nombre de la Empresa:</label></td>
+                        <td>
+                            <input type="text" id="empresa" name="empresa" required>
+                            <span id="empresaStatus" class="status-icon"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="ruc">RUC:</label></td>
+                        <td>
+                            <input type="text" id="ruc" name="ruc" required pattern="[0-9]{11}" title="11 dígitos numéricos">
+                            <span id="rucStatus" class="status-icon"></span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="seccion">
+                <h3>👤 Datos del Responsable</h3>
+                <table>
+                    <tr>
+                        <td><label for="contacto">Nombre del Contacto:</label></td>
+                        <td>
+                            <input type="text" id="contacto" name="contacto" required>
+                            <span id="contactoStatus" class="status-icon"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="email">Email:</label></td>
+                        <td>
+                            <input type="email" id="email" name="email" required>
+                            <span id="emailStatus" class="status-icon"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="telefono">Teléfono:</label></td>
+                        <td>
+                            <input type="tel" id="telefono" name="telefono" required>
+                            <span id="telefonoStatus" class="status-icon"></span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="seccion">
+                <h3>📊 Servicio Requerido</h3>
+                <table>
+                    <tr>
+                        <td><label for="tipo-planilla">Tipo de Planilla:</label></td>
+                        <td>
+                            <select id="tipo-planilla" name="tipo-planilla" required>
+                                <option value="">Seleccione...</option>
+                                <option value="mensual">Planilla Mensual</option>
+                                <option value="quincenal">Planilla Quincenal</option>
+                                <option value="especial">Planilla Especial (Gratificaciones)</option>
+                                <option value="anual">Declaración Anual</option>
+                            </select>
+                            <span id="planillaStatus" class="status-icon"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="empleados">Número de Empleados:</label></td>
+                        <td>
+                            <input type="number" id="empleados" name="empleados" min="1" required>
+                            <span id="empleadosStatus" class="status-icon"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="adjunto">Adjuntar última planilla (opcional):</label></td>
+                        <td>
+                            <input type="file" id="adjunto" name="adjunto" accept=".pdf,.xlsx">
+                            <div id="fileInfo" class="file-info"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="comentarios">Comentarios adicionales:</label></td>
+                        <td>
+                            <textarea id="comentarios" name="comentarios" rows="4"></textarea>
+                            <div class="contador-caracteres"><span id="contador">0</span>/500 caracteres</div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="form-buttons">
+                <input type="submit" value="Enviar Solicitud" id="btnEnviar">
+                <input type="reset" value="Limpiar Formulario" id="btnLimpiar">
+            </div>
+        </form>
+        
+        <!-- Modal de confirmación -->
+        <div id="modalConfirmacion" class="modal">
+            <div class="modal-contenido">
+                <span class="cerrar-modal">&times;</span>
+                <h2>¡Solicitud Enviada con Éxito!</h2>
+                <div id="mensajeConfirmacion"></div>
+                <button id="btnCerrarModal">Aceptar</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <p>© 2025 FiscalPro - Servicios Administrativos y Contables. Todos los derechos reservados.</p>
+            <p><a href="index.html">Volver a la página principal</a></p>
+        </div>
+    </footer>
+
+    <script src="Scripts/ScriptPlanilla.js"></script>
+</body>
+</html>

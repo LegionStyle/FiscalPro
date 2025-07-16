@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora Tributaria - FiscalPro</title>
+  <link rel="stylesheet" href="Styles-CSS/styleCalculadora.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="contenedor-logo">
+      <div class="btn-menu">
+        <label for="btn-menu">☰</label>
+      </div>
+      <div class="logo">
+        <img src="Imagenes/logo-Fiscalpro.png" alt="FiscalPro">
+      </div>
+    </div>
+    <nav class="menu-principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+    
+    <!-- Menú lateral -->
+    <input type="checkbox" id="btn-menu" />
+    <div class="contenedor-menu">
+      <div class="contenido-menu">
+        <nav>
+          <a href="administracionTributaria.html">Administración Tributaria</a>
+          <a href="Planillas.html">Planillas y RRHH</a>
+          <a href="reclutamiento.html">Reclutamiento</a>
+          <a href="auditorias.html">Auditorías Financieras</a>
+          <a href="outurcing.html">Outsourcing Contable</a>
+          <a href="eventos-anuncios.html">Eventos y Anuncios</a>
+          <a href="calculadora.html">Calculadora Tributaria</a>
+          <a href="validaciones.html">Validador de Facturas</a>
+        </nav>
+        <label for="btn-menu">✕</label>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Contenido Principal -->
+  <div class="contenedor-calculadora">
+    <h1 class="titulo-calculadora">Calculadora Tributaria </h1>
+    
+    <div class="cuerpo-calculadora">
+      <div class="seccion-entrada">
+        <div class="pestanas">
+          <div class="pestana activa" onclick="cambiarPestana('persona-natural')">Persona Natural</div>
+          <div class="pestana" onclick="cambiarPestana('empresa')">Empresa</div>
+        </div>
+        
+        <div id="persona-natural" class="contenido-pestana activa">
+          <div class="grupo-formulario">
+            <label for="tipoImpuestoPN">Tipo de Impuesto:</label>
+            <select id="tipoImpuestoPN">
+              <option value="renta">Impuesto a la Renta</option>
+              <option value="iva">IVA</option>
+              <option value="predial">Impuesto Predial</option>
+            </select>
+          </div>
+          
+          <div class="grupo-formulario">
+            <label for="ingresosAnuales">Ingresos Anuales (S/):</label>
+            <input type="number" id="ingresosAnuales" placeholder="Ej: 50000" min="0" step="100">
+          </div>
+          
+          <div class="grupo-formulario">
+            <label for="gastosDeducibles">Gastos Deducibles (S/):</label>
+            <input type="number" id="gastosDeducibles" placeholder="Ej: 15000" min="0" step="100">
+          </div>
+          
+          <div class="grupo-formulario">
+            <label for="regimenPN">Régimen Tributario:</label>
+            <select id="regimenPN">
+              <option value="general">General</option>
+              <option value="mype">MYPE</option>
+              <option value="renta4ta">Renta de 4ta Categoría</option>
+            </select>
+          </div>
+        </div>
+        
+        <div id="empresa" class="contenido-pestana">
+          <div class="grupo-formulario">
+            <label for="tipoImpuestoEmp">Tipo de Impuesto:</label>
+            <select id="tipoImpuestoEmp">
+              <option value="renta">Impuesto a la Renta</option>
+              <option value="iva">IVA</option>
+              <option value="detracciones">Detracciones</option>
+            </select>
+          </div>
+          
+          <div class="grupo-formulario">
+            <label for="utilidadNeta">Utilidad Neta Anual (S/):</label>
+            <input type="number" id="utilidadNeta" placeholder="Ej: 150000" min="0" step="1000">
+          </div>
+          
+          <div class="grupo-formulario">
+            <label for="regimenEmp">Régimen Tributario:</label>
+            <select id="regimenEmp">
+              <option value="general">General</option>
+              <option value="mype">MYPE</option>
+              <option value="exportador">Exportador</option>
+            </select>
+          </div>
+          
+          <div class="grupo-formulario">
+            <label for="empleados">Número de Empleados:</label>
+            <input type="number" id="empleados" placeholder="Ej: 10" min="0">
+          </div>
+        </div>
+        
+        <button class="btn-calcular" onclick="calcularImpuesto()">Calcular Impuestos</button>
+      </div>
+      
+      <div class="seccion-resultado">
+        <h2>Resultados del Cálculo</h2>
+        <div id="resultado" class="resultado-impuesto" style="display: none;">
+          <h3 id="titulo-resultado">Impuesto Calculado</h3>
+          <div class="desglose-impuesto" id="desglose-impuesto"></div>
+          <div class="monto-total" id="monto-total"></div>
+        </div>
+        
+        <div class="resultados-historicos">
+          <h3>Historial de Cálculos</h3>
+          <div id="lista-historial" class="lista-historial"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Footer -->
+  <footer>
+    <div class="contenedor-footer">
+      <p>© 2025 FiscalPro - Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <script src="Scripts/ScriptCalculadora.js"></script>
+</body>
+</html>

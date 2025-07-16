@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos y Anuncios | FiscalPro</title>
+    <link rel="stylesheet" href="Styles-CSS/style-eventos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container-logo">
+            <div class="btn-menu">
+                <label for="btn-menu">☰</label>
+            </div>
+            <div class="logo">
+                <img src="Imagenes/logo-Fiscalpro.png" alt="FiscalPro">
+            </div>
+        </div>
+        <nav class="main-menu">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="Contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Menú lateral -->
+        <input type="checkbox" id="btn-menu" />
+        <div class="container-menu">
+            <div class="cont-menu">
+                <nav>
+                    <a href="administracionTributaria.html">Administración Tributaria</a>
+                    <a href="Planillas.html">Planillas y RRHH</a>
+                    <a href="reclutamiento.html">Reclutamiento</a>
+                    <a href="auditorias.html">Auditorías Financieras</a>
+                    <a href="outsourcing.html">Outsourcing Contable</a>
+                    <a href="eventos-anuncios.html">Eventos y Anuncios</a>
+                    <a href="calculadora.html">Calculadora Tributaria</a>
+                    <a href="validaciones.html">Validador de Facturas</a>
+                </nav>
+                <label for="btn-menu">✕</label>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Contenido principal -->
+    <div class="main-content">
+        <div class="blog-header">
+            <h1>Anuncios y Eventos</h1>
+            <p>Últimos Anuncios, Novedades, Eventos y Seminarios</p>
+        </div>
+        
+        <main class="events-main-content">
+            <!-- Sección de Novedades -->
+            <section id="novedades" class="section-grid novedades-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-newspaper icon-heading"></i> Últimas Novedades y Anuncios</h2>
+                    <div class="filters">
+                        <a href="#" class="filter-btn active" data-filter="all">Todos</a>
+                        <a href="#" class="filter-btn" data-filter="Tributación">Tributación</a>
+                        <a href="#" class="filter-btn" data-filter="Planillas">Planillas</a>
+                        <a href="#" class="filter-btn" data-filter="Consultoría">Consultoría</a>
+                        <a href="#" class="filter-btn" data-filter="Tecnología">Tecnología</a>
+                    </div>
+                </div>
+                <div class="grid-container">
+                    <!-- Los anuncios se cargarán aquí dinámicamente -->
+                </div>
+            </section>
+
+            <!-- Sección de Eventos -->
+            <section id="eventos" class="section-grid events-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-calendar-alt icon-heading"></i> Próximos Eventos y Seminarios</h2>
+                    <div class="filters">
+                        <a href="#" class="filter-btn active" data-filter="all">Todos</a>
+                        <a href="#" class="filter-btn" data-filter="Webinar">Webinars</a>
+                        <a href="#" class="filter-btn" data-filter="Seminario">Seminarios</a>
+                        <a href="#" class="filter-btn" data-filter="Taller">Talleres</a>
+                        <a href="#" class="filter-btn" data-filter="Conferencia">Conferencias</a>
+                    </div>
+                </div>
+                <div class="grid-container">
+                    <!-- Los eventos se cargarán aquí dinámicamente -->
+                </div>
+            </section>
+
+            <!-- Sección de contacto -->
+            <section class="contact-cta-section">
+                <h2>¿Tienes preguntas o sugerencias?</h2>
+                <p>Nos encantaría escuchar tus comentarios y ayudarte en lo que necesites.</p>
+                <a href="Contacto.html" class="cta-button-contact"><i class="fas fa-envelope"></i> Contáctanos</a>
+            </section>
+        </main>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>FiscalPro</h3>
+                <p>Somos una empresa líder en soluciones administrativas y contables para empresas de todos los tamaños.</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="index.html" class="footer-link">Inicio</a></li>
+                    <li><a href="blog.html" class="footer-link">Blog</a></li>
+                    <li><a href="nosotros.html" class="footer-link">Sobre Nosotros</a></li>
+                    <li><a href="contacto.html" class="footer-link">Contacto</a></li>
+                    <li><a href="eventos-anuncios.html" class="footer-link">Eventos y Anuncios</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contacto</h3>
+                <p>📞 (01) 123-4567<br>
+                📱 +51 987 654 321<br>
+                ✉ info@fiscalpro.com</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Redes Sociales</h3>
+                <p>
+                    <a href="https://facebook.com" class="footer-link">Facebook</a><br>
+                    <a href="https://pe.linkedin.com/" class="footer-link">LinkedIn</a><br>
+                    <a href="https://x.com/?lang=es" class="footer-link">X-Twitter</a>
+                </p>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2025 FiscalPro - Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="Scripts/eventos-anuncios.js"></script>
+</body>
+</html>

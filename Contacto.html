@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - FiscalPro | Servicios Administrativos y Contables</title>
+    <link rel="stylesheet" href="Styles-CSS/styleContacto.css">
+</head>
+<body>
+    <!-- Header moderno -->
+    <header>
+        <div class="container-logo">
+            <div class="btn-menu">
+                <label for="btn-menu">☰</label>
+            </div>
+            <div class="logo">
+                <img src="Imagenes/logo-Fiscalpro.png" alt="FiscalPro">
+            </div>
+        </div>
+        <nav class="main-menu">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Menú lateral -->
+        <input type="checkbox" id="btn-menu" />
+        <div class="container-menu">
+            <div class="cont-menu">
+                <nav>
+                    <a href="administracionTributaria.html">Administración Tributaria</a>
+                    <a href="Planillas.html">Planillas y RRHH</a>
+                    <a href="reclutamiento.html">Reclutamiento</a>
+                    <a href="auditorias.html">Auditorías Financieras</a>
+                    <a href="outurcing.html">Outsourcing Contable</a>
+                    <a href="eventos-anuncios.html">Eventos y Anuncios</a>
+                    <a href="calculadora.html">Calculadora Tributaria</a>
+                    <a href="validaciones.html">Validador de Facturas</a>
+                </nav>
+                <label for="btn-menu">✕</label>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Contenido principal -->
+    <div class="contacto-container">
+        <h2 class="contacto-titulo">📞 Contacto</h2>
+        
+        <!-- Sección "Contáctanos" destacada -->
+        <div class="contactanos-destacado">
+            <h3>¡Contáctanos hoy mismo!</h3>
+            <p>En FiscalPro estamos comprometidos a brindarte la mejor asesoría contable y tributaria. Nuestro equipo de expertos está listo para resolver tus consultas y ofrecerte soluciones personalizadas para tu negocio.</p>
+            <p>Utiliza nuestro formulario de contacto o comunícate directamente por teléfono o WhatsApp para una atención más rápida.</p>
+            <a href="tel:+51123456789" class="cta-button">📞 Llamar ahora</a>
+        </div>
+        
+        <div class="contacto-columnas">
+            <div class="info-columna">
+                <h3 class="subtitulo-contacto">Información de Contacto</h3>
+                <p class="texto-contacto">
+                    <strong>📞 Teléfono:</strong> (01) 123-4567<br>
+                    <strong>💬 WhatsApp:</strong> +51 998 504 464<br>
+                    <strong>✉ Email:</strong> info@fiscalpro.com<br>
+                    <strong>📍 Dirección:</strong> Av. Ejercito 123, Torre Empresarial, Piso 5
+                </p>
+                
+                <h3 class="subtitulo-contacto" style="margin-top: 30px;">Horario de Atención</h3>
+                <p class="texto-contacto">
+                    🕘 Lunes a Viernes: 9:00 AM - 6:00 PM<br>
+                    🕘 Sábados: 9:00 AM - 1:00 PM
+                </p>
+                
+                <h3 class="subtitulo-contacto" style="margin-top: 30px;">Redes de Contacto</h3>
+                <p>
+                    <a href="https://facebook.com" class="enlace-redes">Facebook</a> | 
+                    <a href="https://pe.linkedin.com/" class="enlace-redes">LinkedIn</a> | 
+                    <a href="https://web.whatsapp.com/" class="enlace-redes">WhatsApp</a>
+                </p>
+            </div>
+            
+            <div class="form-columna">
+                <h3 class="subtitulo-contacto">Envíanos un Mensaje</h3>
+                <form id="formularioContacto">
+                    <label for="nombre" class="texto-contacto">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" class="campo-formulario" required>
+                    <span id="nombreStatus" class="status-icon"></span>
+                    
+                    <label for="email" class="texto-contacto">Email:</label>
+                    <input type="email" id="email" name="email" class="campo-formulario" required>
+                    <span id="emailStatus" class="status-icon"></span>
+                    
+                    <label for="asunto" class="texto-contacto">Asunto:</label>
+                    <select id="asunto" name="asunto" class="campo-formulario" required>
+                        <option value="">Seleccione un asunto</option>
+                        <option value="consulta">Consulta General</option>
+                        <option value="cotizacion">Solicitud de Cotización</option>
+                        <option value="soporte">Soporte Técnico</option>
+                    </select>
+                    <span id="asuntoStatus" class="status-icon"></span>
+                    
+                    <label for="mensaje" class="texto-contacto">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" class="campo-formulario" required></textarea>
+                    <div class="contador-caracteres"><span id="contador">0</span>/500 caracteres</div>
+                    
+                    <input type="submit" value="Enviar Mensaje" class="boton-enviar" id="btnEnviar">
+                </form>
+            </div>
+        </div>
+        
+        <!-- Mapa de Google -->
+        <section class="map-section">
+            <h3> Encuentranos en nuestras oficinas</h3>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.692320668271!2d-71.5455327!3d-16.3903419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424bc1842490dd%3A0x396a0d8f6068bc24!2sAv.%20Ejercito!5e0!3m2!1ses-419!2spe!4v1620000000000!5m2!1ses-419!2spe"></iframe>
+            </div>
+            <div class="map-info">
+                <p><strong>Dirección:</strong> Av. Ejército, Arequipa 04001</p>
+                <p><strong>Horario de atención:</strong> Lunes a Viernes de 9:00 am a 6:00 pm</p>
+                <p><strong>Teléfono:</strong> (+51) 998504464</p>
+                <p><strong>Email:</strong> auditorias@fiscalpro.com</p>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Modal de confirmación -->
+    <div id="modalConfirmacion" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar-modal">&times;</span>
+            <h2>¡Mensaje Enviado con Éxito!</h2>
+            <div id="mensajeConfirmacion">
+                <p>Gracias por contactar con FiscalPro. Hemos recibido tu mensaje y nos pondremos en contacto contigo en un plazo máximo de 24 horas.</p>
+                <p>Si necesitas atención inmediata, no dudes en llamarnos al <strong>(+51) 998504464</strong>.</p>
+            </div>
+            <button id="btnCerrarModal">Aceptar</button>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <p>© 2025 FiscalPro - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script src="Scripts/ScriptContacto.js"></script>
+</body>
+</html>

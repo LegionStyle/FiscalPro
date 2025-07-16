@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FiscalPro | Formulario de Reclutamiento</title>
+    <link rel="stylesheet" href="Styles-CSS/styleReclutamiento.css">
+    <link rel="icon" href="Imagenes/icono.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container-logo">
+            <div class="btn-menu">
+                <label for="btn-menu">☰</label>
+            </div>
+            <div class="logo">
+                <img src="Imagenes/logo-Fiscalpro.png" alt="FiscalPro">
+            </div>
+        </div>
+        <nav class="main-menu">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="Contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Menú lateral -->
+        <input type="checkbox" id="btn-menu" />
+        <div class="container-menu">
+            <div class="cont-menu">
+                <nav>
+                    <a href="administracionTributaria.html">Administración Tributaria</a>
+                    <a href="Planillas.html">Planillas y RRHH</a>
+                    <a href="reclutamiento.html">Reclutamiento</a>
+                    <a href="auditorias.html">Auditorías Financieras</a>
+                    <a href="outsourcing.html">Outsourcing Contable</a>
+                    <a href="eventos-anuncios.html">Eventos y Anuncios</a>
+                    <a href="calculadora.html">Calculadora Tributaria</a>
+                    <a href="validaciones.html">Validador de Facturas</a>
+                </nav>
+                <label for="btn-menu">✕</label>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Marquee descriptivo -->
+    <div class="marquee-container">
+        <div class="marquee-content">
+            📢 ¡Encuentra al talento perfecto para tu empresa con nuestro servicio de reclutamiento especializado! • Búsqueda, selección y evaluación de candidatos • Ahorra tiempo y reduce costos • 
+        </div>
+    </div>
+    
+    <!-- Contenido principal -->
+    <div class="container">
+        <div class="header">
+            <h1>Solicitud de Servicio de Reclutamiento</h1>
+            <p>Complete el formulario para solicitar nuestro servicio de reclutamiento y selección de personal</p>
+        </div>
+
+        <form id="formularioReclutamiento">
+            <h2 class="section-title">Datos de la Empresa</h2>
+            
+            <div class="form-section">
+                <div class="row">
+                    <div class="column">
+                        <label for="empresa" class="required">Nombre de la empresa</label>
+                        <input type="text" id="empresa" name="empresa" required>
+                        <span id="empresaStatus" class="status-icon"></span>
+                    </div>
+                    <div class="column">
+                        <label for="ruc">RUC</label>
+                        <input type="text" id="ruc" name="ruc">
+                        <span id="rucStatus" class="status-icon"></span>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="column">
+                        <label for="direccion">Dirección</label>
+                        <input type="text" id="direccion" name="direccion">
+                    </div>
+                    <div class="column">
+                        <label for="sector">Sector de la empresa</label>
+                        <select id="sector" name="sector">
+                            <option value="">Seleccione un sector</option>
+                            <option value="tecnologia">Tecnología</option>
+                            <option value="finanzas">Finanzas y Banca</option>
+                            <option value="manufactura">Manufactura</option>
+                            <option value="retail">Retail / Comercio</option>
+                            <option value="servicios">Servicios Profesionales</option>
+                            <option value="educacion">Educación</option>
+                            <option value="salud">Salud</option>
+                            <option value="construccion">Construcción</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="column">
+                        <label for="num_empleados">Número de empleados</label>
+                        <select id="num_empleados" name="num_empleados">
+                            <option value="">Seleccione una opción</option>
+                            <option value="1-10">1-10</option>
+                            <option value="11-50">11-50</option>
+                            <option value="51-200">51-200</option>
+                            <option value="201-500">201-500</option>
+                            <option value="501+">Más de 500</option>
+                        </select>
+                    </div>
+                    <div class="column">
+                        <label for="sitio_web">Sitio web</label>
+                        <input type="text" id="sitio_web" name="sitio_web">
+                        <span id="webStatus" class="status-icon"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <h2 class="section-title">Datos de Contacto</h2>
+            
+            <div class="form-section">
+                <div class="row">
+                    <div class="column">
+                        <label for="nombre_contacto" class="required">Nombre completo</label>
+                        <input type="text" id="nombre_contacto" name="nombre_contacto" required>
+                        <span id="nombreStatus" class="status-icon"></span>
+                    </div>
+                    <div class="column">
+                        <label for="cargo" class="required">Cargo</label>
+                        <input type="text" id="cargo" name="cargo" required>
+                        <span id="cargoStatus" class="status-icon"></span>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="column">
+                        <label for="email" class="required">Correo electrónico</label>
+                        <input type="email" id="email" name="email" required>
+                        <span id="emailStatus" class="status-icon"></span>
+                    </div>
+                    <div class="column">
+                        <label for="telefono" class="required">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono" required>
+                        <span id="telefonoStatus" class="status-icon"></span>
+                    </div>
+                </div>
+                
+                <label for="medio_preferido">Medio de contacto preferido</label>
+                <div class="radio-group">
+                    <input type="radio" id="medio_email" name="medio_preferido" value="email" checked>
+                    <label for="medio_email">Email</label>
+                    
+                    <input type="radio" id="medio_telefono" name="medio_preferido" value="telefono">
+                    <label for="medio_telefono">Teléfono</label>
+                    
+                    <input type="radio" id="medio_whatsapp" name="medio_preferido" value="whatsapp">
+                    <label for="medio_whatsapp">WhatsApp</label>
+                </div>
+            </div>
+            
+            <h2 class="section-title">Detalles de la Posición a Cubrir</h2>
+            
+            <div class="form-section">
+                <div class="row">
+                    <div class="column">
+                        <label for="titulo_puesto" class="required">Título del puesto</label>
+                        <input type="text" id="titulo_puesto" name="titulo_puesto" required>
+                        <span id="puestoStatus" class="status-icon"></span>
+                    </div>
+                    <div class="column">
+                        <label for="departamento">Departamento/Área</label>
+                        <input type="text" id="departamento" name="departamento">
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="column">
+                        <label for="tipo_contrato">Tipo de contrato</label>
+                        <select id="tipo_contrato" name="tipo_contrato">
+                            <option value="">Seleccione una opción</option>
+                            <option value="indefinido">Indefinido</option>
+                            <option value="temporal">Temporal</option>
+                            <option value="practicas">Prácticas</option>
+                            <option value="freelance">Freelance</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+                    <div class="column">
+                        <label for="modalidad">Modalidad de trabajo</label>
+                        <select id="modalidad" name="modalidad">
+                            <option value="">Seleccione una opción</option>
+                            <option value="presencial">Presencial</option>
+                            <option value="remoto">Remoto</option>
+                            <option value="hibrido">Híbrido</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="column">
+                        <label for="jornada">Jornada laboral</label>
+                        <select id="jornada" name="jornada">
+                            <option value="">Seleccione una opción</option>
+                            <option value="completa">Completa</option>
+                            <option value="parcial">Parcial</option>
+                            <option value="por_horas">Por horas</option>
+                        </select>
+                    </div>
+                    <div class="column">
+                        <label for="fecha_incorporacion">Fecha estimada de incorporación</label>
+                        <input type="date" id="fecha_incorporacion" name="fecha_incorporacion">
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="column">
+                        <label for="rango_salarial">Rango salarial (opcional)</label>
+                        <select id="rango_salarial" name="rango_salarial">
+                            <option value="">Seleccione una opción</option>
+                            <option value="menos_2000">Menos de S/ 2,000</option>
+                            <option value="2000-3500">S/ 2,000 - S/ 3,500</option>
+                            <option value="3500-5000">S/ 3,500 - S/ 5,000</option>
+                            <option value="5000-8000">S/ 5,000 - S/ 8,000</option>
+                            <option value="8000-12000">S/ 8,000 - S/ 12,000</option>
+                            <option value="mas_12000">Más de S/ 12,000</option>
+                        </select>
+                    </div>
+                    <div class="column">
+                        <label for="num_vacantes" class="required">Número de vacantes</label>
+                        <input type="number" id="num_vacantes" name="num_vacantes" min="1" value="1" required>
+                        <span id="vacantesStatus" class="status-icon"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <h2 class="section-title">Detalles del Servicio</h2>
+            
+            <div class="form-section">
+                <label for="tipo_servicio" class="required">Servicio requerido</label>
+                <select id="tipo_servicio" name="tipo_servicio" required>
+                    <option value="">Seleccione una opción</option>
+                    <option value="reclutamiento_completo">Proceso de reclutamiento completo</option>
+                    <option value="preseleccion">Solo preselección de candidatos</option>
+                    <option value="evaluacion">Evaluación de candidatos preseleccionados</option>
+                    <option value="assessment">Assessment Center</option>
+                    <option value="head_hunting">Head Hunting para posiciones ejecutivas</option>
+                </select>
+                <span id="servicioStatus" class="status-icon"></span>
+                
+                <label for="urgencia">Nivel de urgencia</label>
+                <select id="urgencia" name="urgencia">
+                    <option value="">Seleccione una opción</option>
+                    <option value="alta">Alta (menos de 15 días)</option>
+                    <option value="media">Media (15-30 días)</option>
+                    <option value="baja">Baja (más de 30 días)</option>
+                </select>
+                
+                <label for="comentarios_adicionales">Comentarios adicionales</label>
+                <textarea id="comentarios_adicionales" name="comentarios_adicionales" rows="4"></textarea>
+                <div class="contador-caracteres"><span id="contador">0</span>/500 caracteres</div>
+            </div>
+            
+            <input type="submit" value="Enviar Solicitud" class="submit-button" id="btnEnviar">
+        </form>
+        
+        <!-- Modal de confirmación -->
+        <div id="modalConfirmacion" class="modal">
+            <div class="modal-contenido">
+                <span class="cerrar-modal">&times;</span>
+                <h2>¡Solicitud Enviada con Éxito!</h2>
+                <div id="mensajeConfirmacion">
+                    <p>Gracias por contactar con FiscalPro para tu necesidad de reclutamiento.</p>
+                    <p>Hemos recibido tu solicitud para el servicio de <strong><span id="servicioSeleccionado"></span></strong>.</p>
+                    <p>Nos pondremos en contacto contigo en un plazo máximo de 24 horas para discutir los detalles.</p>
+                    <p>Para atención inmediata, contáctanos al <strong>(+51) 998504464</strong>.</p>
+                </div>
+                <button id="btnCerrarModal">Aceptar</button>
+            </div>
+        </div>
+        
+        <div class="form-footer">
+            <p>© 2025 FiscalPro - Servicios Administrativos y Contables. Todos los derechos reservados.</p>
+            <p>Para más información: info@fiscalpro.com | (+51) 998504464</p>
+            <p><a href="index.html">Volver a la página principal</a></p>
+        </div>
+    </div>
+
+    <script src="Scripts/ScriptReclutamiento.js"></script>
+
+</body>
+</html>

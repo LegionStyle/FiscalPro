@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripción Auditorías | FiscalPro</title>
+    <link rel="stylesheet" href="Styles-CSS/styleInscripcion.css">
+    
+</head>
+<body>
+    <!-- Encabezado -->
+    <header class="encabezado">
+        <div class="contenedor-logo">
+            <div class="boton-menu">
+                <label for="boton-menu">☰</label>
+            </div>
+            <div class="logo">
+                <img src="imagenes/logo-fiscalpro.png" alt="FiscalPro">
+            </div>
+        </div>
+        <nav class="menu-principal">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Menú lateral -->
+        <input type="checkbox" id="boton-menu" />
+        <div class="contenedor-menu-lateral">
+            <div class="contenido-menu-lateral">
+                <nav>
+                    <a href="administracionTributaria.html">Administración Tributaria</a>
+                    <a href="planillas.html">Planillas y RRHH</a>
+                    <a href="reclutamiento.html">Reclutamiento</a>
+                    <a href="auditorias.html">Auditorías Financieras</a>
+                    <a href="outsourcing.html">Outsourcing Contable</a>
+                    <a href="eventos-anuncios.html">Eventos y Anuncios</a>
+                    <a href="calculadora.html">Calculadora Tributaria</a>
+                    <a href="validaciones.html">Validador de Facturas</a>
+                </nav>
+                <label for="boton-menu">✕</label>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Marquee descriptivo -->
+    <div class="contenedor-marquee">
+        <div class="contenido-marquee">
+            <i class="fas fa-search-dollar"></i> ¡Certifica la salud financiera de tu empresa con nuestras Auditorías Profesionales! • 
+            <i class="fas fa-clipboard-check"></i> Cumplimiento normativo • 
+            <i class="fas fa-shield-alt"></i> Detección de riesgos • 
+            <i class="fas fa-chart-line"></i> Mejora continua • 
+            <i class="fas fa-calendar-plus"></i> Inscríbete ahora y asegura la transparencia de tus operaciones •
+        </div>
+    </div>
+    
+    <!-- Contenido principal -->
+    <div class="contenedor-principal">
+        <div class="encabezado-formulario">
+            <h1><i class="fas fa-file-signature"></i> Inscripción a Auditorías Financieras</h1>
+            <p>Complete el formulario para reservar su auditoría con nuestros especialistas certificados</p>
+            <div class="pasos-progreso">
+                <div class="paso activo" data-paso="1">
+                    <span>1</span>
+                    <p>Datos del Cliente</p>
+                </div>
+                <div class="paso" data-paso="2">
+                    <span>2</span>
+                    <p>Detalles Auditoría</p>
+                </div>
+                <div class="paso" data-paso="3">
+                    <span>3</span>
+                    <p>Método de Pago</p>
+                </div>
+                <div class="paso" data-paso="4">
+                    <span>4</span>
+                    <p>Confirmación</p>
+                </div>
+            </div>
+        </div>
+
+        <form id="formularioAuditoria" class="formulario-multi-paso">
+            <!-- Paso 1: Datos del Cliente -->
+            <div class="paso-formulario activo" data-paso="1">
+                <h2><i class="fas fa-user-tie"></i> Información del Cliente</h2>
+                
+                <div class="cuadricula-formulario">
+                    <div class="grupo-formulario">
+                        <label for="tipo_cliente"><i class="fas fa-users"></i> Tipo de Cliente *</label>
+                        <select id="tipo_cliente" name="tipo_cliente" required>
+                            <option value="">Seleccione una opción</option>
+                            <option value="empresa">Empresa</option>
+                            <option value="independiente">Profesional Independiente</option>
+                            <option value="organizacion">Organización sin fines de lucro</option>
+                            <option value="gobierno">Entidad Gubernamental</option>
+                        </select>
+                    </div>
+                    
+                    <div class="grupo-formulario">
+                        <label for="razon_social"><i class="fas fa-building"></i> Razón Social / Nombre *</label>
+                        <input type="text" id="razon_social" name="razon_social" required>
+                    </div>
+                    
+                    <div class="grupo-formulario">
+                        <label for="ruc"><i class="fas fa-id-card"></i> RUC / DNI *</label>
+                        <input type="text" id="ruc" name="ruc" required>
+                        <button type="button" id="boton-consultar-sunat" class="boton-pequeno"><i class="fas fa-search"></i> Consultar SUNAT</button>
+                    </div>
+                    
+                    <div class="grupo-formulario">
+                        <label for="sector_economico"><i class="fas fa-industry"></i> Sector Económico *</label>
+                        <select id="sector_economico" name="sector_economico" required>
+                            <option value="">Seleccione un sector</option>
+                            <option value="comercio">Comercio</option>
+                            <option value="servicios">Servicios</option>
+                            <option value="manufactura">Manufactura</option>
+                            <option value="construccion">Construcción</option>
+                            <option value="tecnologia">Tecnología</option>
+                            <option value="financiero">Financiero</option>
+                            <option value="otros">Otros</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <h2><i class="fas fa-address-book"></i> Contacto Principal</h2>
+                
+                <div class="cuadricula-formulario">
+                    <div class="grupo-formulario">
+                        <label for="nombre_contacto"><i class="fas fa-user"></i> Nombre Completo *</label>
+                        <input type="text" id="nombre_contacto" name="nombre_contacto" required>
+                    </div>
+                    
+                    <div class="grupo-formulario">
+                        <label for="cargo_contacto"><i class="fas fa-briefcase"></i> Cargo *</label>
+                        <input type="text" id="cargo_contacto" name="cargo_contacto" required>
+                    </div>
+                    
+                    <div class="grupo-formulario">
+                        <label for="correo_contacto"><i class="fas fa-envelope"></i> Correo Electrónico *</label>
+                        <input type="email" id="correo_contacto" name="correo_contacto" required>
+                    </div>
+                    
+                    <div class="grupo-formulario">
+                        <label for="telefono_contacto"><i class="fas fa-phone"></i> Teléfono *</label>
+                        <input type="tel" id="telefono_contacto" name="telefono_contacto" required>
+                    </div>
+                </div>
+                
+                <div class="acciones-formulario">
+                    <button type="button" class="boton-siguiente" data-siguiente="2">Siguiente <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            
+            <!-- Paso 2: Detalles de la Auditoría -->
+            <div class="paso-formulario" data-paso="2">
+                <h2><i class="fas fa-clipboard-list"></i> Detalles de la Auditoría</h2>
+                
+                <div class="cuadricula-formulario">
+                    <div class="grupo-formulario">
+                        <label for="tipo_auditoria"><i class="fas fa-search-dollar"></i> Tipo de Auditoría *</label>
+                        <select id="tipo_auditoria" name="tipo_auditoria" required>
+                            <option value="">Seleccione una opción</option>
+                            <option value="financiera">Auditoría Financiera Completa</option>
+                            <option value="fiscal">Auditoría Fiscal</option>
+                            <option value="operacional">Auditoría Operacional</option>
+                            <option value="cumplimiento">Auditoría de Cumplimiento</option>
+                            <option value="especial">Auditoría Especial</option>
+                            <option value="sistemas">Auditoría de Sistemas</option>
+                        </select>
+                    </div>
+                    
+                    <div class="grupo-formulario">
+                        <label for="alcance_auditoria"><i class="fas fa-calendar-alt"></i> Alcance *</label>
+                        <select id="alcance_auditoria" name="alcance_auditoria" required>
+                            <option value="">Seleccione una opción</option>
+                            <option value="anual">Anual</option>
+                            <option value="semestral">Semestral</option>
+                            <option value="trimestral">Trimestral</option>
+                            <option value="especifico">Período Específico</option>
+                        </select>
+                    </div>
+                    
+                    <div class="grupo-formulario" id="grupo-fecha-inicio">
+                        <label for="fecha_inicio"><i class="far fa-calendar"></i> Fecha Inicio *</label>
+                        <input type="date" id="fecha_inicio" name="fecha_inicio">
+                    </div>
+                    
+                    <div class="grupo-formulario" id="grupo-fecha-fin">
+                        <label for="fecha_fin"><i class="far fa-calendar-check"></i> Fecha Fin *</label>
+                        <input type="date" id="fecha_fin" name="fecha_fin">
+                    </div>
+                    
+                    <div class="grupo-formulario">
+                        <label for="tamano_empresa"><i class="fas fa-chart-pie"></i> Tamaño Empresa</label>
+                        <select id="tamano_empresa" name="tamano_empresa">
+                            <option value="">Seleccione una opción</option>
+                            <option value="pequena">Pequeña (1-10 empleados)</option>
+                            <option value="mediana">Mediana (11-50 empleados)</option>
+                            <option value="grande">Grande (51+ empleados)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="grupo-formulario">
+                        <label for="facturacion_anual"><i class="fas fa-money-bill-wave"></i> Facturación Anual</label>
+                        <select id="facturacion_anual" name="facturacion_anual">
+                            <option value="">Seleccione una opción</option>
+                            <option value="menos_500k">Menos de S/ 500,000</option>
+                            <option value="500k-1m">S/ 500,000 - S/ 1 millón</option>
+                            <option value="1m-5m">S/ 1 millón - S/ 5 millones</option>
+                            <option value="mas_5m">Más de S/ 5 millones</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="grupo-formulario ancho-completo">
+                    <label for="comentarios_adicionales"><i class="fas fa-comment-dots"></i> Comentarios Adicionales</label>
+                    <textarea id="comentarios_adicionales" name="comentarios_adicionales" rows="4"></textarea>
+                </div>
+                
+                <div class="resumen-cotizacion">
+                    <h3><i class="fas fa-receipt"></i> Resumen Preliminar</h3>
+                    <div class="contenido-resumen">
+                        <div class="item-resumen">
+                            <span>Tipo de auditoría:</span>
+                            <span id="resumen-tipo">No seleccionado</span>
+                        </div>
+                        <div class="item-resumen">
+                            <span>Alcance:</span>
+                            <span id="resumen-alcance">No seleccionado</span>
+                        </div>
+                        <div class="item-resumen">
+                            <span>Período:</span>
+                            <span id="resumen-periodo">No definido</span>
+                        </div>
+                        <div class="item-resumen total">
+                            <span>Total estimado:</span>
+                            <span id="resumen-total">S/ 0.00</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="acciones-formulario">
+                    <button type="button" class="boton-anterior" data-anterior="1"><i class="fas fa-arrow-left"></i> Anterior</button>
+                    <button type="button" class="boton-siguiente" data-siguiente="3">Siguiente <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            
+            <!-- Paso 3: Método de Pago -->
+            <div class="paso-formulario" data-paso="3">
+                <h2><i class="fas fa-credit-card"></i> Método de Pago</h2>
+                
+                <div class="metodos-pago">
+                    <div class="metodo-pago" onclick="seleccionarMetodoPago('tarjeta')">
+                        <input type="radio" id="pago_tarjeta" name="metodo_pago" value="tarjeta" required>
+                        <label for="pago_tarjeta">
+                            <i class="far fa-credit-card"></i>
+                            <span>Tarjeta de Crédito/Débito</span>
+                        </label>
+                    </div>
+        
+                    <div class="metodo-pago" onclick="seleccionarMetodoPago('transferencia')">
+                        <input type="radio" id="pago_transferencia" name="metodo_pago" value="transferencia">
+                        <label for="pago_transferencia">
+                            <i class="fas fa-exchange-alt"></i>
+                            <span>Transferencia Bancaria</span>
+                        </label>
+                    </div>
+        
+                    <div class="metodo-pago" onclick="seleccionarMetodoPago('efectivo')">
+                        <input type="radio" id="pago_efectivo" name="metodo_pago" value="efectivo">
+                        <label for="pago_efectivo">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <span>Pago en Efectivo</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Detalles Tarjeta -->
+                <div id="detalles-tarjeta" class="detalles-pago">
+                    <div class="cuadricula-formulario">
+                        <div class="grupo-formulario ancho-completo">
+                            <label for="numero_tarjeta"><i class="far fa-credit-card"></i> Número de Tarjeta *</label>
+                            <input type="text" id="numero_tarjeta" name="numero_tarjeta" placeholder="1234 5678 9012 3456" maxlength="19">
+                        </div>
+                        
+                        <div class="grupo-formulario ancho-completo">
+                            <label for="nombre_tarjeta"><i class="fas fa-signature"></i> Nombre en la Tarjeta *</label>
+                            <input type="text" id="nombre_tarjeta" name="nombre_tarjeta">
+                        </div>
+                        
+                        <div class="grupo-formulario">
+                            <label for="expiracion_tarjeta"><i class="far fa-calendar-alt"></i> Fecha Expiración *</label>
+                            <input type="text" id="expiracion_tarjeta" name="expiracion_tarjeta" placeholder="MM/AA" maxlength="5">
+                        </div>
+                        
+                        <div class="grupo-formulario">
+                            <label for="cvv_tarjeta"><i class="fas fa-lock"></i> CVV *</label>
+                            <input type="password" id="cvv_tarjeta" name="cvv_tarjeta" placeholder="123" maxlength="4">
+                            <button type="button" class="boton-informacion" title="Los 3 dígitos en el reverso de su tarjeta">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detalles Transferencia -->
+                <div id="detalles-transferencia" class="detalles-pago">
+                    <div class="info-banco">
+                        <h3><i class="fas fa-university"></i> Datos para Transferencia</h3>
+                        <div class="item-info">
+                            <span>Banco:</span>
+                            <span>Banco de Crédito del Perú</span>
+                        </div>
+                        <div class="item-info">
+                            <span>Cuenta:</span>
+                            <span>193-28475632-1-45</span>
+                        </div>
+                        <div class="item-info">
+                            <span>CCI:</span>
+                            <span>0021930028475632145</span>
+                        </div>
+                        <div class="item-info">
+                            <span>Titular:</span>
+                            <span>FiscalPro SAC</span>
+                        </div>
+                        <div class="item-info">
+                            <span>RUC:</span>
+                            <span>20548729651</span>
+                        </div>
+                        <div class="nota-info">
+                            <i class="fas fa-paperclip"></i> Enviar comprobante a: pagos@fiscalpro.com
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Detalles Efectivo -->
+                <div id="detalles-efectivo" class="detalles-pago">
+                    <div class="info-efectivo">
+                        <h3><i class="fas fa-hand-holding-usd"></i> Pago en Efectivo</h3>
+                        <div class="item-info">
+                            <span><i class="fas fa-map-marker-alt"></i> Dirección:</span>
+                            <span>Av. Ejército 123, Torre Empresarial, Piso 5, Arequipa</span>
+                        </div>
+                        <div class="item-info">
+                            <span><i class="far fa-clock"></i> Horario:</span>
+                            <span>Lunes a Viernes de 9:00 am a 6:00 pm</span>
+                        </div>
+                        <div class="nota-info">
+                            <i class="fas fa-receipt"></i> Se emitirá un recibo por el pago realizado
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grupo-formulario checkbox-grupo">
+                    <input type="checkbox" id="acepto_terminos" name="acepto_terminos" required>
+                    <label for="acepto_terminos">Acepto los <a href="#" id="ver-terminos">términos y condiciones</a> *</label>
+                </div>
+                
+                <div class="acciones-formulario">
+                    <button type="button" class="boton-anterior" data-anterior="2"><i class="fas fa-arrow-left"></i> Anterior</button>
+                    <button type="button" class="boton-siguiente" data-siguiente="4">Siguiente <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            
+            <!-- Paso 4: Confirmación -->
+            <div class="paso-formulario" data-paso="4">
+                <div class="contenedor-confirmacion">
+                    <div class="icono-confirmacion">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h2>¡Inscripción Exitosa!</h2>
+                    <p>Gracias por inscribirse a nuestro servicio de Auditoría Financiera.</p>
+                    <p>Nos pondremos en contacto con usted en las próximas 24 horas para coordinar los detalles.</p>
+                    <p>Para cualquier consulta, puede contactarnos al  998 504 464.</p>
+                    
+                    <div class="acciones-formulario">
+                        <button type="button" class="boton-enviar" id="boton-finalizar"><i class="fas fa-home"></i> Volver al Inicio</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        
+        <!-- Modal Términos y Condiciones -->
+        <div id="modal-terminos" class="modal">
+            <div class="contenido-modal">
+                <span class="cerrar-modal">&times;</span>
+                <h3><i class="fas fa-file-contract"></i> Términos y Condiciones</h3>
+                <div class="cuerpo-modal">
+                    <ol>
+                        <li>La inscripción está sujeta a disponibilidad de fechas y cupos.</li>
+                        <li>Debe presentar documentación requerida al menos 3 días antes de la auditoría.</li>
+                        <li>Se requiere pago del 50% como adelanto para confirmar la reserva.</li>
+                        <li>Cancelaciones con menos de 5 días hábiles de anticipación generarán cargo del 20%.</li>
+                        <li>FiscalPro se reserva el derecho de modificar fechas por fuerza mayor, ofreciendo alternativas.</li>
+                        <li>Los resultados de la auditoría son confidenciales y propiedad del cliente.</li>
+                        <li>El cliente debe proporcionar acceso a toda la información requerida por los auditores.</li>
+                        <li>El precio puede variar si se requieren servicios adicionales no contemplados inicialmente.</li>
+                        <li>El tiempo de entrega del informe final es de 10 días hábiles después de concluida la auditoría.</li>
+                    </ol>
+                </div>
+                <button id="boton-aceptar-terminos" class="boton-modal"><i class="fas fa-check"></i> Aceptar Términos</button>
+            </div>
+        </div>
+        
+        <!-- Modal Confirmación -->
+        <div id="modal-confirmacion" class="modal">
+            <div class="contenido-modal confirmacion">
+                <div class="icono-modal exito">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h3>¡Inscripción Exitosa!</h3>
+                <div id="mensaje-confirmacion">
+                    <p>Gracias por inscribirse a nuestro servicio de Auditoría Financiera.</p>
+                    <p>Hemos recibido su solicitud para <strong><span id="modal-tipo-auditoria"></span></strong> con alcance <strong><span id="modal-alcance"></span></strong>.</p>
+                    <p>Nos pondremos en contacto con usted en las próximas 24 horas para coordinar los detalles.</p>
+                    <p>Para cualquier consulta, puede contactarnos al (054) 123456.</p>
+                </div>
+                <button id="cerrar-confirmacion" class="boton-modal"><i class="fas fa-thumbs-up"></i> Aceptar</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Pie de página -->
+    <footer class="pie-pagina">
+        <div class="contenedor-pie">
+            <div class="seccion-pie">
+                <h4><i class="fas fa-map-marker-alt"></i> Oficina Principal</h4>
+                <p>Av. Ejército 123, Torre Empresarial</p>
+                <p>Arequipa, Perú</p>
+            </div>
+            <div class="seccion-pie">
+                <h4><i class="fas fa-clock"></i> Horario</h4>
+                <p>Lunes - Viernes: 9am - 6pm</p>
+                <p>Sábado: 9am - 1pm</p>
+            </div>
+            <div class="seccion-pie">
+                <h4><i class="fas fa-phone"></i> Contacto</h4>
+                <p>(+51) 998504464</p>
+                <p>auditorias@fiscalpro.com</p>
+                <div class="iconos-sociales">
+                    <a href="https://facebook.com"><i class="fab fa-facebook-f"></i>F</a>
+                    <a href="https://linkedin.com"><i class="fab fa-linkedin-in"></i> L</a>
+                    <a href="https://twitter.com"><i class="fab fa-twitter"></i> X</a>
+                    <a href="https://instagram.com"><i class="fab fa-instagram"></i> I</a>
+                </div>
+            </div>
+        </div>
+        <div class="base-pie">
+            <p>&copy; 2025 FiscalPro - Todos los derechos reservados</p>
+        </div>
+    </footer>
+    <script src="Scripts/scriptInscripcion.js"></script>
+</body>
+</html>

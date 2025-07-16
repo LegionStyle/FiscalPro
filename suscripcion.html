@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Suscripción</title>
+    <link rel="stylesheet" href="Styles-CSS/styleSuscripcion.css">
+    <link rel="stylesheet" href="Styles-CSS/styleblog.css">
+
+</head>
+
+<body>
+
+   <!-- Header  -->
+    <header>
+        <div class="container-logo">
+            <div class="btn-menu">
+                <label for="btn-menu">☰</label>
+            </div>
+            <div class="logo">
+                <img src="Imagenes/logo-Fiscalpro.png" alt="FiscalPro">
+            </div>
+        </div>
+        <nav class="main-menu">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="Contacto.html">Contacto</a></li>
+                <li><a href="suscripcion.html">Suscribirme</a></li>
+                
+
+            </ul>
+        </nav>
+        
+        <!-- Menú lateral -->
+        <input type="checkbox" id="btn-menu" />
+        <div class="container-menu">
+            <div class="cont-menu">
+                <nav>
+                <a href="administracionTributaria.html">Administración Tributaria</a>
+                <a href="Planillas.html">Planillas y RRHH</a>
+                <a href="reclutamiento.html">Reclutamiento</a>
+                <a href="auditorias.html">Auditorías Financieras</a>
+                <a href="outsourcing.html">Outsourcing Contable</a>
+                <a href="eventos-anuncios.html">Eventos y Anuncios</a>
+                </nav>
+>
+                <label for="btn-menu">✕</label>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!--contenedor de Volver a blog-->
+        <div class="boton-volver">
+            <a href="blog.html">Volver a blog</a>
+        </div>
+        <section class="hero-suscripcion">
+            <h1>Suscríbete a nuestras noticias</h1>
+            <p>Recibe las últimas novedades y actualizaciones de FiscalPro directamente en tu correo electrónico.</p>
+        </section>
+        <section class="formulario-suscripcion">
+            <h2>Suscríbete a nuestras noticias</h2>
+            <form id="formSuscripcion">
+                <input type="text" id="nombre" placeholder="Nombre">
+                <input type="text" id="apellidos" placeholder="Apellidos">
+                <input type="text" id="nacionalidad" placeholder="Nacionalidad">
+                <input type="number" id="edad" placeholder="Edad">
+                <input type="text" id="telefono" placeholder="Número de teléfono">
+                <input type="email" id="correo" placeholder="Correo electrónico">
+                <button type="submit">Suscribirme</button>
+            </form>
+            <div id="mensaje" class="ventana-flotante"></div>
+        </section>
+    </main>
+    <!-- Modal de suscripción exitosa -->
+    <div id="modalExito" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar" id="cerrarModal">&times;</span>
+            <h2>¡Suscripción Exitosa!</h2>
+            <p>Gracias por suscribirte a FiscalPro. Pronto recibirás nuestras novedades y actualizaciones en tu correo electrónico.</p>
+            <p>Si tienes alguna duda, puedes contactarnos al <strong>(+51) 987654321</strong>.</p>
+            <button id="botonAceptar">Aceptar</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <p>© 2025 FiscalPro - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script src="Scripts/suscripcion.js"></script>
+</body>
+</html>

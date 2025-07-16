@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración de Eventos y Anuncios | FiscalPro</title>
+    <link rel="stylesheet" href="../Styles-CSS/styleblog.css"> <link rel="stylesheet" href="../Styles-CSS/style-admin-eventos.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container-logo">
+            <div class="btn-menu">
+                <label for="btn-menu">☰</label>
+            </div>
+            <div class="logo">
+                <img src="../Imagenes/logo-Fiscalpro.png" alt="FiscalPro">
+            </div>
+        </div>
+        <nav class="main-menu">
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="Contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        
+        <input type="checkbox" id="btn-menu" />
+        <div class="container-menu">
+            <div class="cont-menu">
+                <nav>
+                    <a href="administracionTributaria.html">Administración Tributaria</a>
+                    <a href="Planillas.html">Planillas y RRHH</a>
+                    <a href="reclutamiento.html">Reclutamiento</a>
+                    <a href="auditorias.html">Auditorías Financieras</a>
+                    <a href="outsourcing.html">Outsourcing Contable</a>
+                    <a href="eventos-anuncios.html">Eventos y Anuncios</a>
+                    <a href="calculadora.html">Calculadora Tributaria</a>
+                    <a href="validaciones.html">Validador de Facturas</a>
+                    
+                <label for="btn-menu">✕</label>
+            </div>
+        </div>
+    </header>
+
+    <div class="admin-container">
+        <div class="admin-header">
+            <h1>Administración de Eventos y Anuncios</h1>
+            <p>Gestiona todos los eventos y anuncios publicados en FiscalPro</p>
+        </div>
+        
+        <div class="admin-actions">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Buscar eventos/anuncios...">
+                <button id="searchBtn" class="btn btn-primary">Buscar</button>
+            </div>
+            <div class="filter-container">
+                <select id="typeFilter">
+                    <option value="">Todo tipo</option>
+                    <option value="Anuncio">Anuncio</option>
+                    <option value="Webinar">Webinar</option>
+                    <option value="Seminario">Seminario</option>
+                    <option value="Taller">Taller</option>
+                    <option value="Conferencia">Conferencia</option>
+                    <option value="Novedad">Novedad</option>
+                </select>
+                <select id="statusFilter">
+                    <option value="">Todos los estados</option>
+                    <option value="Activo">Activo</option>
+                    <option value="Inactivo">Inactivo</option>
+                    <option value="Finalizado">Finalizado</option>
+                </select>
+            </div>
+            <button id="addEventBtn" class="btn btn-primary">+ Agregar Evento/Anuncio</button>
+        </div>
+        
+        <table class="events-table">
+            <thead>
+                <tr>
+                    <th>Tipo</th>
+                    <th>Título</th>
+                    <th>Fecha/Hora</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="eventsTableBody">
+                </tbody>
+        </table>
+        
+        <div class="pagination">
+            <button id="prevPage">Anterior</button>
+            <span id="pageInfo">Página 1 de 1</span>
+            <button id="nextPage">Siguiente</button>
+        </div>
+    </div>
+    
+    <div id="eventModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">Agregar Nuevo Evento/Anuncio</h2>
+            <form id="eventForm">
+                <input type="hidden" id="eventId">
+                
+                <div class="form-group">
+                    <label for="eventType">Tipo:</label>
+                    <select id="eventType" class="form-control" required>
+                        <option value="">Seleccione un tipo</option>
+                        <option value="Anuncio">Anuncio</option>
+                        <option value="Webinar">Webinar</option>
+                        <option value="Seminario">Seminario</option>
+                        <option value="Taller">Taller</option>
+                        <option value="Conferencia">Conferencia</option>
+                        <option value="Novedad">Novedad</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="eventTitle">Título:</label>
+                    <input type="text" id="eventTitle" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="eventDescription">Descripción:</label>
+                    <textarea id="eventDescription" class="form-control" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="eventDate">Fecha:</label>
+                    <input type="date" id="eventDate" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="eventTime">Hora (opcional):</label>
+                    <input type="time" id="eventTime" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="eventImage">URL de la Imagen (opcional):</label>
+                    <input type="text" id="eventImage" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="eventUrl">URL del Evento/Anuncio (Más Información):</label>
+                    <input type="text" id="eventUrl" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="eventStatus">Estado:</label>
+                    <select id="eventStatus" class="form-control" required>
+                        <option value="Activo">Activo</option>
+                        <option value="Inactivo">Inactivo</option>
+                        <option value="Finalizado">Finalizado</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn btn-success">Guardar</button>
+                <button type="button" id="cancelBtn" class="btn btn-danger">Cancelar</button>
+            </form>
+        </div>
+    </div>
+    
+    <div id="confirmModal" class="modal">
+        <div class="modal-content" style="max-width: 500px;">
+            <span class="close">&times;</span>
+            <h2>Confirmar Eliminación</h2>
+            <p id="confirmMessage">¿Estás seguro de que deseas eliminar este elemento?</p>
+            <div style="text-align: right; margin-top: 20px;">
+                <button id="confirmDeleteBtn" class="btn btn-danger">Eliminar</button>
+                <button id="cancelDeleteBtn" class="btn">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="Scripts/admin-eventos.js"></script>
+</body>
+</html>

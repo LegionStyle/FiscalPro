@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitud de Servicio de Administración Tributaria | FiscalPro</title>
+    <link rel="stylesheet" href="Styles-CSS/styleFormulario-tributario.css">
+</head>
+<body>
+    <!-- Encabezado moderno -->
+    <header class="encabezado">
+        <div class="contenedor-logo">
+            <div class="boton-menu">
+                <label for="boton-menu">☰</label>
+            </div>
+            <div class="logo">
+                <img src="imagenes/logo-fiscalpro.png" alt="FiscalPro">
+            </div>
+        </div>
+        <nav class="menu-principal">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="capa"></div>
+        
+        <!-- Menú lateral -->
+        <input type="checkbox" id="boton-menu" />
+        <div class="contenedor-menu">
+            <div class="contenido-menu">
+                <nav>
+                    <a href="administracionTributaria.html">Administración Tributaria</a>
+                    <a href="planillas.html">Planillas y RRHH</a>
+                    <a href="reclutamiento.html">Reclutamiento</a>
+                    <a href="auditorias.html">Auditorías Financieras</a>
+                    <a href="outsourcing.html">Outsourcing Contable</a>
+                    <a href="eventos-anuncios.html">Eventos y Anuncios</a>
+                    <a href="calculadora.html">Calculadora Tributaria</a>
+                    <a href="validaciones.html">Validador de Facturas</a>
+                </nav>
+                <label for="boton-menu">✕</label>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Contenido principal -->
+    <div class="contenido-principal">
+        <div class="encabezado-formulario">
+            <h1>Solicitud de Servicio de Administración Tributaria</h1>
+            
+            <!-- Marquee descriptivo -->
+            <div class="contenedor-marquee">
+                <div class="contenido-marquee">
+                    📊 Optimización fiscal • 📑 Declaraciones mensuales y anuales • 🏛 Representación ante SUNAT • 💰 Recuperación de impuestos • 🔍 Asesoría en fiscalizaciones • 📈 Planificación fiscal estratégica • 🚀 Maximiza tus beneficios tributarios
+                </div>
+            </div>
+        </div>
+        
+        <form class="formulario" id="formularioTributario">
+            <table>
+                <tr>
+                    <td colspan="2" class="seccion">
+                        <h3>🏢 Datos de la Empresa</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="empresa"><strong>Nombre de la Empresa:</strong></label></td>
+                    <td><input type="text" id="empresa" name="empresa" required></td>
+                </tr>
+                <tr>
+                    <td><label for="ruc"><strong>RUC:</strong></label></td>
+                    <td>
+                        <input type="text" id="ruc" name="ruc" required pattern="[0-9]{11}" title="11 dígitos numéricos">
+                        <span id="estado-ruc" class="icono-estado"></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" class="seccion">
+                        <h3>👤 Datos del Contacto</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="nombre"><strong>Nombre del Contacto:</strong></label></td>
+                    <td><input type="text" id="nombre" name="nombre" required></td>
+                </tr>
+                <tr>
+                    <td><label for="correo"><strong>Email:</strong></label></td>
+                    <td>
+                        <input type="email" id="correo" name="correo" required>
+                        <span id="estado-correo" class="icono-estado"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="telefono"><strong>Teléfono:</strong></label></td>
+                    <td>
+                        <input type="tel" id="telefono" name="telefono" required>
+                        <span id="estado-telefono" class="icono-estado"></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" class="seccion">
+                        <h3>💼 Servicio Tributario Requerido</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="servicio"><strong>Seleccione el servicio:</strong></label></td>
+                    <td>
+                        <select id="servicio" name="servicio" required>
+                            <option value="">Seleccione...</option>
+                            <option value="mensuales">Declaraciones mensuales</option>
+                            <option value="anuales">Declaraciones anuales</option>
+                            <option value="planificacion">Planificación fiscal estratégica</option>
+                            <option value="representacion">Representación ante SUNAT</option>
+                            <option value="recuperacion">Recuperación de impuestos</option>
+                            <option value="asesoria">Asesoría en fiscalizaciones</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="comentarios"><strong>Comentarios adicionales:</strong></label></td>
+                    <td>
+                        <textarea id="comentarios" name="comentarios" rows="4" placeholder="Ingrese detalles sobre su solicitud..."></textarea>
+                        <div class="contador-caracteres"><span id="contador">0</span>/500 caracteres</div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" align="center" style="padding-top: 20px;">
+                        <input type="submit" value="Enviar Solicitud" id="boton-enviar">
+                        <input type="reset" value="Limpiar Formulario" id="boton-limpiar">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        
+        <!-- Modal de confirmación -->
+        <div id="modal-confirmacion" class="modal">
+            <div class="contenido-modal">
+                <span class="cerrar-modal">&times;</span>
+                <h2>¡Solicitud Enviada con Éxito!</h2>
+                <p id="mensaje-confirmacion">Gracias por contactar con FiscalPro. Nos pondremos en contacto contigo en un plazo máximo de 24 horas.</p>
+                <button id="boton-cerrar-modal">Aceptar</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Pie de página -->
+    <footer class="pie-pagina">
+        <div class="contenedor-pie">
+            <p>&copy; 2025 FiscalPro Asesorías. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="Scripts/Scriptadministtraciontributaria.js"></script>
+</body>
+</html>

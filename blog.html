@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog FiscalPro | Servicios Administrativos y Contables</title>
+    <link rel="stylesheet" href="Styles-CSS/styleblog.css">
+
+</head>
+<body>
+    <!-- Header  -->
+    <header>
+        <div class="container-logo">
+            <div class="btn-menu">
+                <label for="btn-menu">☰</label>
+            </div>
+            <div class="logo">
+                <img src="Imagenes/logo-Fiscalpro.png" alt="FiscalPro">
+            </div>
+        </div>
+        <nav class="main-menu">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="Contacto.html">Contacto</a></li>
+                <li><a href="suscripcion.html">Suscribirme</a></li>
+                
+
+            </ul>
+        </nav>
+        
+        <!-- Menú lateral -->
+        <input type="checkbox" id="btn-menu" />
+        <div class="container-menu">
+            <div class="cont-menu">
+                <nav>
+                <a href="administracionTributaria.html">Administración Tributaria</a>
+                <a href="Planillas.html">Planillas y RRHH</a>
+                <a href="reclutamiento.html">Reclutamiento</a>
+                <a href="auditorias.html">Auditorías Financieras</a>
+                <a href="outsourcing.html">Outsourcing Contable</a>
+                <a href="eventos-anuncios.html">Eventos y Anuncios</a>
+                <a href="calculadora.html">Calculadora Tributaria</a>
+                <a href="validaciones.html">Validador de Facturas</a>
+                </nav>
+>
+                <label for="btn-menu">✕</label>
+            </div>
+        </div>
+    </header>
+    
+    <!-- barra de busquedas -->
+<section id="busquedaNoticias">
+  <h2>Busca una noticia</h2>
+  <div class="busqueda-container">
+    <input type="text" id="buscador" placeholder="Buscar tus noticias...">
+    <button id="btnBuscar">
+      <img src="Imagenes/lupa.png" alt="Buscar">
+    </button>
+  </div>
+  <ul id="resultados"></ul>
+</section>
+    <!-- boton de suscripccion-->
+    <div class="suscripcion-container">
+        <a href="suscripcion.html" class="suscripcion-button">Suscríbete a nuestro boletín</a>
+    </div>
+
+
+
+
+    <!-- Contenido principal -->
+    <div class="main-content">
+        <div class="blog-header">
+            <h1>Blog FiscalPro</h1>
+            <p>Ultimas Noticias y Actualizaciones</p>
+        </div>
+        <!-- Contenedor dinámico para noticias -->
+    <div id="contenedor-noticias" class="articles-container">
+        <!-- Las noticias se cargarán aquí con JavaScript -->
+    </div>
+        <div class="articles-container">
+            <!-- Artículo 1 (Más reciente) -->
+            <article class="article-card">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Modificaciones tributarias" class="article-image">
+                <div class="article-content">
+                    <div class="article-meta">
+                        <span class="article-date">Junio 5, 2025</span>
+                        <span class="article-category">Tributación</span>
+                    </div>
+                    <h3 class="article-title">Nuevas modificaciones en el régimen tributario para PYMES 2025</h3>
+                    <p class="article-excerpt">Análisis detallado de los cambios que beneficiarán a las pequeñas y medianas empresas este año fiscal.</p>
+                    <a href="https://actualidadempresarial.pe/noticia/estos-son-los-cambios-tributarios-que-entraron-en-vigencia-en-peru-este-2025-que-impacto-tendran/36d9abf5-b3c8-4d1f-8271-bef8548b2925/1" class="read-more">Leer más →</a>
+                </div>
+            </article>
+
+            <!-- Artículo 2 -->
+            <article class="article-card">
+                <img src="Imagenes/blog4.png" alt="Auditoría Tributaria" class="article-image">
+                <div class="article-content">
+                    <div class="article-meta">
+                        <span class="article-date">Mayo 30, 2025</span>
+                        <span class="article-category">Tributación</span>
+                    </div>
+                    <h3 class="article-title">Actualización en los montos de ESSALUD y AFP para el segundo semestre</h3>
+                    <p class="article-excerpt">Conozca los nuevos topes y porcentajes aplicables a partir de julio 2025 y cómo afectan su planilla.</p>
+                    <a href="https://www.infobae.com/peru/2025/01/03/suben-aportes-a-essalud-por-nuevo-sueldo-minimo-en-peru-de-s1130-cuanto-les-quedara-de-salario/" class="read-more">Leer más →</a>
+                </div>
+            </article>
+
+            <!-- Artículo 3 -->
+            <article class="article-card">
+                <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="ESSALUD y AFP" class="article-image">
+                <div class="article-content">
+                    <div class="article-meta">
+                        <span class="article-date">Mayo 28, 2025</span>
+                        <span class="article-category">Planillas</span>
+                    </div>
+                    <h3 class="article-title">FiscalPro establece alianza estratégica con SUNAT para capacitaciones</h3>
+                    <p class="article-excerpt">Nuestros clientes tendrán acceso exclusivo a talleres con funcionarios tributarios este trimestre.</p>
+                    <a href="https://www.perucontable.com/.../sunat-y-gremios.../" class="read-more">Leer más →</a>
+                </div>
+            </article>
+
+            <!-- Artículo 4 -->
+            <article class="article-card">
+                <img src="Imagenes/blog5.png" alt="Cumplimiento Fiscal" class="article-image">
+                <div class="article-content">
+                    <div class="article-meta">
+                        <span class="article-date">Mayo 22, 2025</span>
+                        <span class="article-category">Tributación</span>
+                    </div>
+                    <h3 class="article-title">Cambios en los plazos para declaraciones juradas anuales</h3>
+                    <p class="article-excerpt">Nuevos calendarios tributarios: fechas clave que toda empresa debe conocer para evitar multas.</p>
+                    <a href="https://www.sunat.gob.pe/orientacion/cronogramas/2025/cRenta2024.html" class="read-more">Leer más →</a>
+                </div>
+            </article>
+
+            <!-- Artículo 5 -->
+            <article class="article-card">
+                <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Alianza SUNAT" class="article-image">
+                <div class="article-content">
+                    <div class="article-meta">
+                        <span class="article-date">Mayo 20, 2025</span>
+                        <span class="article-category">Consultoría</span>
+                    </div>
+                    <h3 class="article-title">¿Está preparada tu empresa para una auditoría tributaria?</h3>
+                    <p class="article-excerpt">Conozca los pasos esenciales para afrontar una auditoría de SUNAT sin complicaciones.</p>
+                    <a href="https://www.megavalbusiness.com/post/an%C3%A1lisis-previo-a-una-auditoria-tributaria-por-sunat" class="read-more">Leer más →</a>
+                </div>
+            </article>
+
+            <!-- Artículo 6 -->
+            <article class="article-card">
+                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Plataforma digital" class="article-image">
+                <div class="article-content">
+                    <div class="article-meta">
+                        <span class="article-date">Mayo 18, 2025</span>
+                        <span class="article-category">Tecnología</span>
+                    </div>
+                    <h3 class="article-title">Nueva plataforma digital para envío de comprobantes electrónicos</h3>
+                    <p class="article-excerpt">Guía paso a paso para migrar al nuevo sistema de SUNAT que agilizará tus procesos contables.</p>
+                    <a href="https://cpe.sunat.gob.pe/sistema_emision/see_sol" class="read-more">Leer más →</a>
+                </div>
+            </article>
+
+            <!-- Artículo 7 -->
+            <article class="article-card">
+                <img src="Imagenes/blog1.png" alt="Normativa Tributaria" class="article-image">
+                <div class="article-content">
+                    <div class="article-meta">
+                        <span class="article-date">Mayo 15, 2025</span>
+                        <span class="article-category">Tributación</span>
+                    </div>
+                    <h3 class="article-title">Cambios en la normativa tributaria para 2025</h3>
+                    <p class="article-excerpt">Descubra cómo los nuevos cambios fiscales afectarán a su empresa y cómo prepararse para ellos de manera efectiva.</p>
+                    <a href="https://eef.com.pe/site/blog/cambios-tributarios-a-tener-en-cuenta-en-el-a%C3%B1o-2025" class="read-more">Leer más →</a>
+                </div>
+            </article>
+            
+            <!-- Artículo 8 -->
+            <article class="article-card">
+                <img src="Imagenes/blog3.jpg" alt="Selección de Talento" class="article-image">
+                <div class="article-content">
+                    <div class="article-meta">
+                        <span class="article-date">Mayo 5, 2025</span>
+                        <span class="article-category">Recursos Humanos</span>
+                    </div>
+                    <h3 class="article-title">¿Cómo atraer y retener talento en un entorno laboral cambiante?</h3>
+                    <p class="article-excerpt">Estrategias clave para construir equipos sólidos y reducir la rotación en tu empresa.</p>
+                    <a href="https://www.endalia.com/news/9-estrategias-de-retencion-del-talento-humano-para-tu-organizacion/" class="read-more">Leer más →</a>
+                </div>
+            </article>
+            
+            <!-- Artículo 9 -->
+            <article class="article-card">
+                <img src="Imagenes/blog6.jpg" alt="Automatización" class="article-image">
+                <div class="article-content">
+                    <div class="article-meta">
+                        <span class="article-date">Mayo 1, 2025</span>
+                        <span class="article-category">Planillas</span>
+                    </div>
+                    <h3 class="article-title">Ventajas de automatizar el proceso de planillas en tu empresa</h3>
+                    <p class="article-excerpt">Descubra cómo la tecnología puede reducir tiempos, errores y costos al gestionar nóminas.</p>
+                    <a href="https://www.endalia.com/news/la-automatizacion-de-nominas-ventajas-y-mejores-practicas/" class="read-more">Leer más →</a>
+                </div>
+            </article>
+            
+            <!-- Artículo 10 -->
+            <article class="article-card">
+                <img src="Imagenes/blog2.jpg" alt="Gestión de Planillas" class="article-image">
+                <div class="article-content">
+                    <div class="article-meta">
+                        <span class="article-date">Abril 28, 2025</span>
+                        <span class="article-category">Planillas</span>
+                    </div>
+                    <h3 class="article-title">5 claves para una gestión eficiente de planillas</h3>
+                    <p class="article-excerpt">Aprenda a optimizar sus procesos de nómina y evitar errores costosos con estas estrategias comprobadas.</p>
+                    <a href="https://www.buk.pe/blog/estrategias-para-optimizar-el-calculo-de-la-planilla" class="read-more">Leer más →</a>
+                </div>
+            </article>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <p>© 2025 FiscalPro - Todos los derechos reservados</p>
+
+        </div>
+    </footer>
+
+    <script src="Scripts/ScriptsBlogs.js"></script>
+
+</body>
+</html>

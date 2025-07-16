@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validador de Facturas | FiscalPro</title>
+    <link rel="stylesheet" href="Styles-CSS/StyleValidacion.css">
+<body>
+    <!-- Header y Menú -->
+    <header>
+        <div class="contenedor-logo">
+            <div class="btn-menu">
+                <label for="btn-menu">☰</label>
+            </div>
+            <div class="logo">
+                <img src="Imagenes/logo-Fiscalpro.png" alt="FiscalPro">
+            </div>
+        </div>
+        <nav class="menu-principal">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Menú lateral -->
+        <input type="checkbox" id="btn-menu" />
+        <div class="contenedor-menu">
+            <div class="contenido-menu">
+                <nav>
+                    <a href="administracionTributaria.html">Administración Tributaria</a>
+                    <a href="Planillas.html">Planillas y RRHH</a>
+                    <a href="reclutamiento.html">Reclutamiento</a>
+                    <a href="auditorias.html">Auditorías Financieras</a>
+                    <a href="outurcing.html">Outsourcing Contable</a>
+                    <a href="eventos-anuncios.html">Eventos y Anuncios</a>
+                    <a href="calculadora.html">Calculadora Tributaria</a>
+                    <a href="validaciones.html">Validador de Facturas</a>
+                </nav>
+                <label for="btn-menu">✕</label>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Contenido Principal -->
+    <div class="contenedor">
+        <h1>Validador de Facturas Electrónicas</h1>
+        
+        <div class="contenedor-carga" id="area-carga">
+            <input type="file" id="entrada-factura" accept="image/*,.pdf" hidden>
+            <button class="btn" onclick="document.getElementById('entrada-factura').click()">
+                📄 Seleccionar Factura
+            </button>
+            <p>o arrástrala aquí</p>
+        </div>
+
+        
+        <div id="resultado-validacion">
+            <h3>Resultados de Validación</h3>
+            <div class="datos-factura" id="datos-factura"></div>
+            <button class="btn" id="btn-guardar">Guardar Validación</button>
+            <button class="btn btn-peligro" id="btn-nueva">Validar Otra Factura</button>
+        </div>
+
+        
+        <div id="historial-validaciones">
+            <h3>Historial de Facturas Validadas</h3>
+            <div id="lista-historial"></div>
+        </div>
+    </div>
+
+    <script src="Scripts/ScriptValidacion.js"></script>
+</body>
+</html>
