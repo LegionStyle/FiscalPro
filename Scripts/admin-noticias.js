@@ -153,8 +153,6 @@ document.addEventListener("DOMContentLoaded", () => {
     
     function updatePaginationControls() {
         const totalPages = Math.ceil(filteredNoticias.length / itemsPerPage);
-        pageInfo.textContent = `Página ${currentPage} de ${totalPages}`;
-        
         prevPageBtn.disabled = currentPage === 1;
         nextPageBtn.disabled = currentPage === totalPages || totalPages === 0;
     }
