@@ -1,30 +1,29 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // ======================
+    
     // 1. CARGAR NOTICIAS
-    // ======================
     const noticias = JSON.parse(localStorage.getItem('noticias')) || [
         
     
 ];
 
-    // ======================
+    
     // 2. ELEMENTOS DEL DOM
-    // ======================
+    
     const contenedorNoticias = document.getElementById('contenedor-noticias');
     const inputBuscar = document.getElementById('buscador');
     const btnBuscar = document.getElementById('btnBuscar');
     const resultadosBusqueda = document.getElementById('resultados');
     const categoryFilter = document.createElement('select');
 
-    // ======================
+    
     // 3. INICIALIZACIÓN
-    // ======================
-    initCategoryFilter(); // Configurar filtro de categorías
-    renderizarNoticias(noticias); // Mostrar todas las noticias al cargar
+    
+    initCategoryFilter(); 
+    renderizarNoticias(noticias); 
 
-    // ======================
+    
     // 4. FUNCIONES PRINCIPALES
-    // ======================
+    
 
     // Configurar filtro de categorías
     function initCategoryFilter() {
@@ -48,8 +47,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (noticiasAMostrar.length === 0) {
             contenedor.innerHTML = esBusqueda 
-                ? `<li class="no-results">No se encontraron noticias</li>`
-                : `<div class="no-noticias">No hay noticias disponibles</div>`;
+                ? `<li class="no-results"></li>`
+                : `<div class="no-noticias"></div>`;
             return;
         }
 
@@ -104,9 +103,9 @@ document.addEventListener("DOMContentLoaded", () => {
         return new Date(fechaString).toLocaleDateString('es-ES', opciones);
     }
 
-    // ======================
+    
     // 5. EVENT LISTENERS
-    // ======================
+    
     btnBuscar.addEventListener('click', aplicarFiltros);
     inputBuscar.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') aplicarFiltros();
@@ -127,9 +126,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// ======================
-// 6. ESTILOS DINÁMICOS
-// ======================
+
+// 6. ESTILOS DINAMICOS
+
 const dynamicStyles = document.createElement('style');
 dynamicStyles.textContent 
 document.head.appendChild(dynamicStyles);
