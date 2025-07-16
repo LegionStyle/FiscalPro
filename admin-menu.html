@@ -10,20 +10,17 @@
         /* Estilos generales del cuerpo y fuente */
         body {
             display: flex;
-            flex-direction: column; /* Para que el header y el contenido se apilen */
-            justify-content: flex-start; /* Alinea al inicio */
+            flex-direction: column; 
+            justify-content: flex-start; 
             align-items: center;
             min-height: 100vh;
-            background: linear-gradient(135deg, #011729 0%, #000a16 100%); /* Fondo degradado oscuro */
+            background: linear-gradient(135deg, #011729 0%, #000a16 100%); 
             margin: 0;
             font-family: 'Arial', sans-serif;
             color: #f0f0f0;
             line-height: 1.6;
         }
 
-        /* --- Header (Opcional, adapta de tu blog.html o index.html si lo deseas) --- */
-        /* Si quieres un header más completo, deberías traerlo de tus otros archivos, 
-           asegurándote de que los estilos correspondientes también estén incrustados aquí o enlazados. */
         header {
             width: 100%;
             background: rgba(1, 23, 41, 0.9);
@@ -34,7 +31,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+            flex-wrap: wrap; 
         }
 
         .container-logo {
@@ -42,7 +39,7 @@
         }
 
         .logo img {
-            max-height: 60px; /* Tamaño del logo en el header */
+            max-height: 60px; 
         }
 
         .main-menu ul {
@@ -70,21 +67,19 @@
             color: white;
         }
 
-        /* --- Fin del Header --- */
-
 
         /* Contenedor principal del menú de administración */
         .admin-menu-container {
             max-width: 900px;
-            width: 90%; /* Ancho responsivo */
-            margin: 60px auto; /* Centrar con margen superior e inferior */
+            width: 90%; 
+            margin: 60px auto; 
             padding: 30px;
             background: rgba(1, 23, 41, 0.8);
             border-radius: 10px;
             border: 1px solid rgba(0, 174, 255, 0.3);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             text-align: center;
-            flex-grow: 1; /* Permite que el contenedor crezca para ocupar espacio */
+            flex-grow: 1; 
         }
 
         .admin-menu-header {
@@ -106,10 +101,10 @@
         /* Grid para las opciones del menú */
         .menu-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Dos columnas, o una si la pantalla es pequeña */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
             gap: 25px;
             margin-bottom: 40px;
-            justify-content: center; /* Centra los elementos si hay menos de dos */
+            justify-content: center; 
         }
 
         .menu-item {
@@ -175,7 +170,7 @@
                 font-size: 2.5rem;
             }
             .menu-grid {
-                grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+                grid-template-columns: 1fr; 
             }
             .menu-item {
                 padding: 25px 15px;
@@ -238,11 +233,10 @@
         document.addEventListener('DOMContentLoaded', () => {
             const logoutBtn = document.getElementById('logoutBtn');
 
-            // **IMPORTANTE: Verificar el estado de la sesión al cargar la página**
-            // Si el usuario no está logueado, redirigir a la página de login
+
             if (sessionStorage.getItem('isAdminLoggedIn') !== 'true') {
                 window.location.href = 'iniciosesion.html';
-                return; // Detener la ejecución del script
+                return; 
             }
 
             // Manejador del botón Cerrar Sesión
