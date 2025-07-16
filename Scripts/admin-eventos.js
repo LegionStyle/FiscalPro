@@ -243,7 +243,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Funciones de Paginación ---
     function updatePagination(totalItems) {
         const totalPages = Math.ceil(totalItems / itemsPerPage);
-        pageInfoSpan.textContent = `Página ${currentPage} de ${totalPages || 1}`;
         prevPageBtn.disabled = currentPage === 1;
         nextPageBtn.disabled = currentPage === totalPages || totalItems === 0;
     }
