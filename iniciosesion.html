@@ -39,10 +39,9 @@
             text-align: center;
             width: 100%;
             max-width: 400px;
-            animation: fadeIn 0.8s ease-out; /* Animación de aparición */
+            animation: fadeIn 0.8s ease-out; 
         }
 
-        /* Animación para que la caja de login aparezca suavemente */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(-20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -54,18 +53,18 @@
         }
 
         .login-header img {
-            max-width: 150px; /* Tamaño del logo */
+            max-width: 150px; 
             margin-bottom: 15px;
         }
 
         .login-header h2 {
-            color: #00eeff; /* Color de título azul brillante */
+            color: #00eeff; 
             font-size: 2.2rem;
             margin: 0;
-            text-shadow: 0 0 10px rgba(0, 174, 255, 0.5); /* Sombra para el texto */
+            text-shadow: 0 0 10px rgba(0, 174, 255, 0.5); 
         }
 
-        /* Grupo de cada campo de formulario (label + input) */
+        
         .form-group {
             margin-bottom: 20px;
             text-align: left;
@@ -74,55 +73,73 @@
         .form-group label {
             display: block;
             margin-bottom: 8px;
-            color: #00aeff; /* Color de etiqueta azul */
+            color: #00aeff;
             font-weight: bold;
             font-size: 1.1rem;
         }
 
         .form-group input {
-            width: calc(100% - 20px); /* Ancho completo menos padding */
-            padding: 12px 10px;
-            background: rgba(0, 10, 20, 0.8); /* Fondo oscuro del input */
-            border: 1px solid rgba(0, 174, 255, 0.3); /* Borde azul suave */
+            width: calc(100% - 20px); 
+            background: rgba(0, 10, 20, 0.8); 
+            border: 1px solid rgba(0, 174, 255, 0.3);
             border-radius: 5px;
-            color: white; /* Texto blanco en el input */
+            color: white; 
             font-size: 1rem;
-            transition: all 0.3s ease; /* Transición suave al enfocar */
+            transition: all 0.3s ease; 
         }
 
         .form-group input:focus {
             outline: none;
-            border-color: #00aeff; /* Borde más brillante al enfocar */
-            box-shadow: 0 0 10px rgba(0, 174, 255, 0.6); /* Sombra al enfocar */
+            border-color: #00aeff; 
+            box-shadow: 0 0 10px rgba(0, 174, 255, 0.6); 
         }
 
-        /* Botón de iniciar sesión */
-        .btn-primary {
+        /* Botones generales */
+        .btn {
             width: 100%;
             padding: 15px;
-            background: rgba(0, 174, 255, 0.4); /* Fondo azul semitransparente */
-            color: white;
-            border: 1px solid rgba(0, 174, 255, 0.6);
             border-radius: 5px;
             cursor: pointer;
             font-size: 1.2rem;
             font-weight: bold;
             transition: all 0.3s ease;
-            margin-top: 10px;
+            margin-top: 10px; 
+            display: block;
+            text-decoration: none; 
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: rgba(0, 174, 255, 0.4); 
+            color: white;
+            border: 1px solid rgba(0, 174, 255, 0.6);
         }
 
         .btn-primary:hover {
-            background: rgba(0, 174, 255, 0.6); /* Fondo más opaco al pasar el ratón */
+            background: rgba(0, 174, 255, 0.6); 
             box-shadow: 0 0 15px rgba(0, 174, 255, 0.8);
         }
 
-        /* Mensajes de error/éxito */
+        /* Nuevo estilo para el botón de volver al inicio */
+        .btn-secondary {
+            background: rgba(100, 100, 100, 0.3); 
+            color: white;
+            border: 1px solid rgba(150, 150, 150, 0.5);
+            margin-top: 15px; 
+        }
+
+        .btn-secondary:hover {
+            background: rgba(100, 100, 100, 0.5);
+            box-shadow: 0 0 10px rgba(150, 150, 150, 0.6);
+        }
+
+        
         .message {
             margin-top: 20px;
             padding: 10px;
             border-radius: 5px;
             font-weight: bold;
-            display: none; /* Oculto por defecto */
+            display: none; 
             font-size: 0.95rem;
         }
 
@@ -138,7 +155,7 @@
             border: 1px solid rgba(0, 255, 0, 0.3);
         }
 
-        /* Media Queries para Responsiveness */
+        /* Media Queries para Responsivo */
         @media (max-width: 600px) {
             .login-box {
                 margin: 20px;
@@ -153,7 +170,7 @@
             .form-group input {
                 padding: 10px;
             }
-            .btn-primary {
+            .btn {
                 padding: 12px;
                 font-size: 1rem;
             }
@@ -179,6 +196,11 @@
                 <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
                 <div id="message" class="message"></div>
             </form>
+            
+            <a href="index.html" class="btn btn-secondary">
+                <i class="fas fa-home"></i> Volver al Inicio
+            </a>
+
         </div>
     </div>
 
@@ -194,12 +216,12 @@
             const correctPassword = "Admin1234";
 
             loginForm.addEventListener('submit', (e) => {
-                e.preventDefault(); // Evita que el formulario se envíe de forma tradicional
+                e.preventDefault(); 
 
                 const enteredUsername = usernameInput.value;
                 const enteredPassword = passwordInput.value;
 
-                messageDiv.style.display = 'none'; // Ocultar mensaje previo
+                messageDiv.style.display = 'none'; 
 
                 if (enteredUsername === correctUsername && enteredPassword === correctPassword) {
                     // Credenciales correctas
@@ -207,20 +229,17 @@
                     messageDiv.className = 'message success';
                     messageDiv.style.display = 'block';
 
-                    // Establecer una bandera en sessionStorage para indicar que el usuario está logueado
-                    // sessionStorage se borra cuando la pestaña se cierra, lo cual es bueno para seguridad básica.
                     sessionStorage.setItem('isAdminLoggedIn', 'true');
 
-                    // Redireccionar al menú de administración
                     setTimeout(() => {
                         window.location.href = 'admin-menu.html'; 
-                    }, 1500); // Retraso de 1.5 segundos para que el usuario vea el mensaje de éxito
+                    }, 1500); 
                 } else {
                     // Credenciales incorrectas
                     messageDiv.textContent = 'Usuario o contraseña incorrectos.';
                     messageDiv.className = 'message error';
                     messageDiv.style.display = 'block';
-                    passwordInput.value = ''; // Limpiar campo de contraseña
+                    passwordInput.value = ''; 
                 }
             });
         });
