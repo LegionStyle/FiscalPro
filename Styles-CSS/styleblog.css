@@ -831,23 +831,4 @@ ul#resultados li {
             border-radius: 5px;
             border: 1px solid #ddd;
         }
-        
-        .pagination {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        
-        .pagination button {
-            margin: 0 5px;
-            padding: 8px 12px;
-            border: 1px solid #ddd;
-            background-color: white;
-            cursor: pointer;
-        }
-        
-        .pagination button.active {
-            background-color: #004e98;
-            color: white;
-            border-color: #004e98;
-        }
+       
