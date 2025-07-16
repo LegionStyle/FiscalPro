@@ -79,6 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     url: 'https://ejemplo.com/seminario-auditoria',
                     status: 'Activo'
                 }
+        
     ];
 
 
