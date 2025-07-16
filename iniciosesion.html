@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso de Administrador | FiscalPro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Estilos generales del cuerpo y fuente */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #011729 0%, #000a16 100%); /* Fondo degradado oscuro */
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            color: #f0f0f0;
+            line-height: 1.6;
+        }
+
+        /* Contenedor principal de la caja de login */
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Caja del formulario de login */
+        .login-box {
+            background: rgba(1, 23, 41, 0.95);
+            padding: 40px;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 174, 255, 0.3);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+            animation: fadeIn 0.8s ease-out; /* Animación de aparición */
+        }
+
+        /* Animación para que la caja de login aparezca suavemente */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Encabezado dentro de la caja de login */
+        .login-header {
+            margin-bottom: 30px;
+        }
+
+        .login-header img {
+            max-width: 150px; /* Tamaño del logo */
+            margin-bottom: 15px;
+        }
+
+        .login-header h2 {
+            color: #00eeff; /* Color de título azul brillante */
+            font-size: 2.2rem;
+            margin: 0;
+            text-shadow: 0 0 10px rgba(0, 174, 255, 0.5); /* Sombra para el texto */
+        }
+
+        /* Grupo de cada campo de formulario (label + input) */
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #00aeff; /* Color de etiqueta azul */
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .form-group input {
+            width: calc(100% - 20px); /* Ancho completo menos padding */
+            padding: 12px 10px;
+            background: rgba(0, 10, 20, 0.8); /* Fondo oscuro del input */
+            border: 1px solid rgba(0, 174, 255, 0.3); /* Borde azul suave */
+            border-radius: 5px;
+            color: white; /* Texto blanco en el input */
+            font-size: 1rem;
+            transition: all 0.3s ease; /* Transición suave al enfocar */
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #00aeff; /* Borde más brillante al enfocar */
+            box-shadow: 0 0 10px rgba(0, 174, 255, 0.6); /* Sombra al enfocar */
+        }
+
+        /* Botón de iniciar sesión */
+        .btn-primary {
+            width: 100%;
+            padding: 15px;
+            background: rgba(0, 174, 255, 0.4); /* Fondo azul semitransparente */
+            color: white;
+            border: 1px solid rgba(0, 174, 255, 0.6);
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .btn-primary:hover {
+            background: rgba(0, 174, 255, 0.6); /* Fondo más opaco al pasar el ratón */
+            box-shadow: 0 0 15px rgba(0, 174, 255, 0.8);
+        }
+
+        /* Mensajes de error/éxito */
+        .message {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: none; /* Oculto por defecto */
+            font-size: 0.95rem;
+        }
+
+        .message.error {
+            background: rgba(255, 0, 0, 0.2);
+            color: #ff0000;
+            border: 1px solid rgba(255, 0, 0, 0.3);
+        }
+
+        .message.success {
+            background: rgba(0, 255, 0, 0.2);
+            color: #00ff00;
+            border: 1px solid rgba(0, 255, 0, 0.3);
+        }
+
+        /* Media Queries para Responsiveness */
+        @media (max-width: 600px) {
+            .login-box {
+                margin: 20px;
+                padding: 30px;
+            }
+            .login-header h2 {
+                font-size: 1.8rem;
+            }
+            .form-group label {
+                font-size: 1rem;
+            }
+            .form-group input {
+                padding: 10px;
+            }
+            .btn-primary {
+                padding: 12px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <div class="login-header">
+                <img src="Imagenes/logo-Fiscalpro.png" alt="FiscalPro Logo">
+                <h2>Acceso de Administrador</h2>
+            </div>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Usuario:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                <div id="message" class="message"></div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loginForm = document.getElementById('loginForm');
+            const usernameInput = document.getElementById('username');
+            const passwordInput = document.getElementById('password');
+            const messageDiv = document.getElementById('message');
+
+            // Credenciales de ejemplo
+            const correctUsername = "Administrador1";
+            const correctPassword = "Admin1234";
+
+            loginForm.addEventListener('submit', (e) => {
+                e.preventDefault(); // Evita que el formulario se envíe de forma tradicional
+
+                const enteredUsername = usernameInput.value;
+                const enteredPassword = passwordInput.value;
+
+                messageDiv.style.display = 'none'; // Ocultar mensaje previo
+
+                if (enteredUsername === correctUsername && enteredPassword === correctPassword) {
+                    // Credenciales correctas
+                    messageDiv.textContent = 'Inicio de sesión exitoso. Redirigiendo...';
+                    messageDiv.className = 'message success';
+                    messageDiv.style.display = 'block';
+
+                    // Establecer una bandera en sessionStorage para indicar que el usuario está logueado
+                    // sessionStorage se borra cuando la pestaña se cierra, lo cual es bueno para seguridad básica.
+                    sessionStorage.setItem('isAdminLoggedIn', 'true');
+
+                    // Redireccionar al menú de administración
+                    setTimeout(() => {
+                        window.location.href = 'admin-menu.html'; 
+                    }, 1500); // Retraso de 1.5 segundos para que el usuario vea el mensaje de éxito
+                } else {
+                    // Credenciales incorrectas
+                    messageDiv.textContent = 'Usuario o contraseña incorrectos.';
+                    messageDiv.className = 'message error';
+                    messageDiv.style.display = 'block';
+                    passwordInput.value = ''; // Limpiar campo de contraseña
+                }
+            });
+        });
+    </script>
+</body>
+</html>
