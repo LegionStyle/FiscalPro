@@ -1,4 +1,6 @@
+
 document.addEventListener('DOMContentLoaded', () => {
+    
     const eventsTableBody = document.getElementById('eventsTableBody');
     const addEventBtn = document.getElementById('addEventBtn');
     const eventModal = document.getElementById('eventModal');
@@ -30,8 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const confirmDeleteBtn = document.getElementById('confirmDeleteBtn');
     const cancelDeleteBtn = document.getElementById('cancelDeleteBtn');
 
-    // --- Datos de ejemplo para inicializar si localStorage está vacío ---
-    const defaultEvents = [
+    // --- Datos de ejemplo predeterminados ---
+    // Estos se usarán para inicializar localStorage si está vacío
+    const defaultEventsAndAnnouncements = [
         {
             id: '1721000000001',
             type: 'Webinar',
@@ -39,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
             description: 'Exploraremos los cambios más importantes en la legislación tributaria para el año 2025 y cómo afectarán a tu empresa. ¡No te lo pierdas!',
             date: '2025-08-15',
             time: '10:00',
-            image: 'https://images.unsplash.com/photo-1542744173-8e47263bb7fc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // Imagen de ejemplo
+            image: 'https://images.unsplash.com/photo-1542744173-8e47263bb7fc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
             url: 'https://zoom.us/webinar/novedades-tributarias',
             status: 'Activo'
         },
@@ -50,32 +53,50 @@ document.addEventListener('DOMContentLoaded', () => {
             description: 'Nos complace anunciar la apertura de nuestra nueva sede en el corazón de Miraflores para una mejor atención a nuestros clientes.',
             date: '2025-07-20',
             time: '',
-            image: 'https://images.unsplash.com/photo-1555421062-81787c805a86?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // Imagen de ejemplo
+            image: 'https://images.unsplash.com/photo-1555421062-81787c805a86?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
             url: 'https://fiscalpro.com/contacto#miraflores',
             status: 'Activo'
         },
-        
+        {
+            id: '1721000000003',
+            type: 'Novedad',
+            title: 'Actualización en Normativa Fiscal: Cambios en el IGV',
+            description: 'Infórmate sobre las últimas modificaciones en la Ley del Impuesto General a las Ventas y cómo cumplir con las nuevas disposiciones para evitar sanciones.',
+            date: '2025-07-20',
+            time: '',
+            image: 'https://images.unsplash.com/photo-1579621970795-87facc2f976d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            url: 'https://ejemplo.com/igv-cambios',
+            status: 'Activo'
+        },
+        {
+            id: '1721000000004',
+            type: 'Seminario',
+            title: 'Seminario Presencial: Estrategias de Auditoría Financiera',
+            description: 'Únete a nuestro seminario interactivo para dominar las metodologías modernas de auditoría y mejorar la transparencia de tus estados financieros.',
+            date: '2025-09-05',
+            time: '09:00',
+            image: 'https://images.unsplash.com/photo-1555421062-81787c805a86?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            url: 'https://ejemplo.com/seminario-auditoria',
+            status: 'Activo'
+        }
     ];
 
-    // Cargar eventos y anuncios desde localStorage, o usar los datos por defecto si está vacío
-    
-    let events = JSON.parse(localStorage.getItem('fiscalproEvents')) || defaultEvents;
-    
-    if (localStorage.getItem('fiscalproEvents') === null) {
-        localStorage.setItem('fiscalproEvents', JSON.stringify(defaultEvents));
+
+    let events = JSON.parse(localStorage.getItem('fiscalproEvents')) || defaultEventsAndAnnouncements;
+
+    // Asegurarse de que defaultEventsAndAnnouncements se guarden en localStorage si no existen
+    if (localStorage.getItem('fiscalproEvents') === null || events.length === 0) {
+        localStorage.setItem('fiscalproEvents', JSON.stringify(defaultEventsAndAnnouncements));
+        events = defaultEventsAndAnnouncements; 
     }
 
-
     let currentEventIdToDelete = null;
-    let currentPage = 1;
+    let currentPage = 0;
     const itemsPerPage = 5;
 
-    
-
-    // Guarda los eventos en localStorage y actualiza la página del blog de eventos
+    // Guarda los eventos en localStorage y activa el re-renderizado
     function saveEvents() {
         localStorage.setItem('fiscalproEvents', JSON.stringify(events));
-        // Disparar un evento para que la página de eventos/anuncios se actualice si está abierta
         window.dispatchEvent(new Event('localStorageUpdate'));
         renderEvents(); 
     }
@@ -88,16 +109,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const filteredEvents = events.filter(event => {
             const matchesSearch = event.title.toLowerCase().includes(searchTerm) ||
-                                  event.description.toLowerCase().includes(searchTerm);
+                                event.description.toLowerCase().includes(searchTerm);
             const matchesType = filterType === '' || event.type === filterType;
             const matchesStatus = filterStatus === '' || event.status === filterStatus;
             return matchesSearch && matchesType && matchesStatus;
         });
 
-        // Ordenar por fecha, los más recientes primero
+        // Ordenar por fecha, los más recientes primero (en el admin, esto suele ser útil)
         filteredEvents.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-        const startIndex = (currentPage - 1) * itemsPerPage;
+        const startIndex = currentPage * itemsPerPage;
         const endIndex = startIndex + itemsPerPage;
         const paginatedEvents = filteredEvents.slice(startIndex, endIndex);
 
@@ -112,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <td>${event.type}</td>
                     <td>${event.title}</td>
                     <td>${event.date} ${event.time ? `(${event.time})` : ''}</td>
-                    <td><span class="status-badge status-${event.status}">${event.status}</span></td>
+                    <td><span class="status-badge status-${event.status.toLowerCase()}">${event.status}</span></td>
                     <td class="actions">
                         <button class="btn btn-primary btn-edit" data-id="${event.id}">Editar</button>
                         <button class="btn btn-danger btn-delete" data-id="${event.id}">Eliminar</button>
@@ -120,8 +141,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 `;
             });
         }
-
         updatePagination(filteredEvents.length);
+    }
+
+    // Actualiza la información de paginación
+    function updatePagination(totalItems) {
+        const totalPages = Math.ceil(totalItems / itemsPerPage);
+        prevPageBtn.disabled = currentPage === 0;
+        nextPageBtn.disabled = currentPage >= (totalPages - 1) || totalItems === 0;
     }
 
     // Abre el modal para añadir/editar
@@ -144,13 +171,12 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             // Modo añadir
             modalTitle.textContent = 'Agregar Nuevo Evento/Anuncio';
-            // Valores por defecto
+            // Valores por defecto para nuevo ítem
             eventTypeInput.value = ''; 
             eventStatusInput.value = 'Activo';
-            // Establecer la fecha actual por defecto para la nueva entrada
             eventDateInput.value = new Date().toISOString().slice(0, 10); 
         }
-        eventModal.style.display = 'flex'; // Usar flex para centrado
+        eventModal.style.display = 'flex';
     }
 
     // Cierra el modal
@@ -174,13 +200,20 @@ document.addEventListener('DOMContentLoaded', () => {
         const url = eventUrlInput.value;
         const status = eventStatusInput.value;
 
+        if (!title || !description || !date || !type || !status) {
+            showAlert('Por favor, completa todos los campos obligatorios.', 'warning');
+            return;
+        }
+
         if (id) {
             // Editar evento/anuncio existente
             const eventIndex = events.findIndex(event => event.id === id);
             if (eventIndex > -1) {
                 events[eventIndex] = { id, type, title, description, date, time, image, url, status };
+                showAlert('Evento/Anuncio actualizado exitosamente.', 'success');
+            } else {
+                showAlert('Error: Evento/Anuncio no encontrado para actualizar.', 'danger');
             }
-            showAlert('Evento/Anuncio actualizado exitosamente.', 'success');
         } else {
             // Añadir nuevo evento/anuncio
             const newEvent = {
@@ -198,11 +231,11 @@ document.addEventListener('DOMContentLoaded', () => {
             showAlert('Nuevo evento/anuncio agregado exitosamente.', 'success');
         }
 
-        saveEvents();
+        saveEvents(); // Guarda en localStorage y re-renderiza
         closeModal();
     });
 
-    // Delegación de eventos para botones de editar/eliminar
+    // Delegación de eventos para botones de editar/eliminar en la tabla
     eventsTableBody.addEventListener('click', (e) => {
         if (e.target.classList.contains('btn-edit')) {
             const id = e.target.dataset.id;
@@ -212,43 +245,38 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         } else if (e.target.classList.contains('btn-delete')) {
             currentEventIdToDelete = e.target.dataset.id;
-            confirmMessage.textContent = `¿Estás seguro de que deseas eliminar "${events.find(e => e.id === currentEventIdToDelete)?.title}"?`;
+            const eventToDelete = events.find(e => e.id === currentEventIdToDelete);
+            confirmMessage.textContent = `¿Estás seguro de que deseas eliminar "${eventToDelete ? eventToDelete.title : 'este ítem'}"?`;
             confirmModal.style.display = 'flex';
         }
     });
 
     // --- Funciones de Búsqueda y Filtro ---
     searchBtn.addEventListener('click', () => {
-        currentPage = 1; 
+        currentPage = 0; // Volver a la primera página en una nueva búsqueda
         renderEvents();
     });
 
     searchInput.addEventListener('keyup', (e) => {
         if (e.key === 'Enter') {
-            currentPage = 1; 
+            currentPage = 0; // Volver a la primera página en una nueva búsqueda
             renderEvents();
         }
     });
 
     typeFilter.addEventListener('change', () => {
-        currentPage = 1; 
+        currentPage = 0; // Volver a la primera página en un nuevo filtro
         renderEvents();
     });
 
     statusFilter.addEventListener('change', () => {
-        currentPage = 1; 
+        currentPage = 0; // Volver a la primera página en un nuevo filtro
         renderEvents();
     });
 
     // --- Funciones de Paginación ---
-    function updatePagination(totalItems) {
-        const totalPages = Math.ceil(totalItems / itemsPerPage);
-        prevPageBtn.disabled = currentPage === 1;
-        nextPageBtn.disabled = currentPage === totalPages || totalItems === 0;
-    }
-
     prevPageBtn.addEventListener('click', () => {
-        if (currentPage > 1) {
+        if (currentPage > 0) {
             currentPage--;
             renderEvents();
         }
@@ -267,33 +295,39 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         const totalPages = Math.ceil(filteredEvents.length / itemsPerPage);
 
-        if (currentPage < totalPages) {
+        if (currentPage < totalPages - 1) { // totalPages - 1 porque currentPage es 0-indexed
             currentPage++;
             renderEvents();
         }
     });
 
-    //  Funciones del Modal de Confirmación de Eliminacion
+    // Funciones del Modal de Confirmación de Eliminación
     confirmDeleteBtn.addEventListener('click', () => {
         if (currentEventIdToDelete) {
             events = events.filter(event => event.id !== currentEventIdToDelete);
-            saveEvents();
             showAlert('Evento/Anuncio eliminado exitosamente.', 'danger');
             currentEventIdToDelete = null; // Resetear
-            confirmModal.style.display = 'none';
-             // Ajustar la página actual si es necesario después de eliminar
+
+            // Ajustar la página actual si es necesario después de eliminar
+            const searchTerm = searchInput.value.toLowerCase();
+            const filterType = typeFilter.value;
+            const filterStatus = statusFilter.value;
             const totalItemsAfterDelete = events.filter(event => {
-                const searchTerm = searchInput.value.toLowerCase();
-                const filterType = typeFilter.value;
                 const matchesSearch = event.title.toLowerCase().includes(searchTerm) || event.description.toLowerCase().includes(searchTerm);
                 const matchesType = filterType === '' || event.type === filterType;
-                return matchesSearch && matchesType;
+                const matchesStatus = filterStatus === '' || event.status === filterStatus;
+                return matchesSearch && matchesType && matchesStatus;
             }).length;
             const totalPagesAfterDelete = Math.ceil(totalItemsAfterDelete / itemsPerPage);
-            if (currentPage > totalPagesAfterDelete && currentPage > 1) {
-                currentPage = totalPagesAfterDelete;
+
+            if (currentPage >= totalPagesAfterDelete && totalPagesAfterDelete > 0) {
+                currentPage = totalPagesAfterDelete - 1; // Ajustar a 0-indexed
+            } else if (totalPagesAfterDelete === 0) {
+                currentPage = 0; // Si no hay más elementos, vuelve a la página 0
             }
-            renderEvents(); 
+
+            saveEvents(); // Guarda en localStorage y re-renderiza
+            confirmModal.style.display = 'none';
         }
     });
 
@@ -302,10 +336,10 @@ document.addEventListener('DOMContentLoaded', () => {
         currentEventIdToDelete = null;
     });
 
-    //  Otros Controles del Modal 
+    // Otros Controles del Modal
     addEventBtn.addEventListener('click', () => openModal());
     cancelBtn.addEventListener('click', closeModal);
-    closeButtons.forEach(btn => btn.addEventListener('click', closeModal)); // Cierra ambos modales
+    closeButtons.forEach(btn => btn.addEventListener('click', closeModal));
 
     window.addEventListener('click', (e) => {
         if (e.target === eventModal) {
@@ -319,17 +353,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Función para mostrar alertas temporales
     function showAlert(message, type) {
+        const adminContainer = document.querySelector('.admin-container');
+        if (!adminContainer) {
+            console.error("No se encontró el elemento .admin-container para mostrar la alerta.");
+            return;
+        }
         const alertDiv = document.createElement('div');
         alertDiv.className = `alert alert-${type}`;
         alertDiv.textContent = message;
-        document.querySelector('.admin-container').prepend(alertDiv);
+        adminContainer.prepend(alertDiv);
 
         setTimeout(() => {
             alertDiv.classList.add('hide');
             alertDiv.addEventListener('transitionend', () => alertDiv.remove());
         }, 3000);
     }
-    
+
     // Iniciar la renderización de eventos al cargar la página
     renderEvents();
 });
