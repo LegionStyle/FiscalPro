@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     description: 'Exploraremos los cambios más importantes en la legislación tributaria para el año 2025 y cómo afectarán a tu empresa. ¡No te lo pierdas!',
                     date: '2025-08-15',
                     time: '10:00',
-                    image: 'https://images.unsplash.com/photo-1542744173-8e47263bb7fc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+                    image: 'https://www.godaddy.com/resources/es/wp-content/uploads/sites/9/2022/05/body_webinar.png?size=3840x0',
                     url: 'https://zoom.us/webinar/novedades-tributarias',
                     status: 'Activo'
                 },
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     description: 'Nos complace anunciar la apertura de nuestra nueva sede en el corazón de Miraflores para una mejor atención a nuestros clientes.',
                     date: '2025-07-20',
                     time: '',
-                    image: 'https://images.unsplash.com/photo-1555421062-81787c805a86?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+                    image: 'https://img.properati.com/eyJidWNrZXQiOiJwcmQtbGlmdWxsY29ubmVjdC1iYWNrZW5kLWIyYi1pbWFnZXMiLCJrZXkiOiJwcm9wZXJ0aWVzLzAxOTc4ZTQ0LTYxMjctNzY2Yi1hOGUxLTljYmYxOGE4N2I3OC8wMTk3OGU0Ni1kNTI2LTczMDctYjNjZS0zYjYyZjY2ZWRmMmUuanBnIiwiYnJhbmQiOiJwcm9wZXJhdGkiLCJlZGl0cyI6eyJyb3RhdGUiOm51bGwsInJlc2l6ZSI6eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjI0MCwiZml0IjoiY292ZXIifX19',
                     url: 'https://fiscalpro.com/contacto#miraflores',
                     status: 'Activo'
                 },
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     description: 'Únete a nuestro seminario interactivo para dominar las metodologías modernas de auditoría y mejorar la transparencia de tus estados financieros.',
                     date: '2025-09-05',
                     time: '09:00',
-                    image: 'https://images.unsplash.com/photo-1555421062-81787c805a86?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+                    image: 'https://mundogeo.com/wp-content/uploads/2022/10/04145006/curso-no-mundogeo-e-droneshow-202211-710x400.jpg',
                     url: 'https://ejemplo.com/seminario-auditoria',
                     status: 'Activo'
                 }
